@@ -43,7 +43,7 @@ h3 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 10em;
   letter-spacing: 3px;
   letter-spacing: 0.2em;
 }
@@ -139,7 +139,7 @@ aside {
   color: var(--camino-blue);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .6em;
+  font-size: .7em;
   margin-left: 0;
 }
 
@@ -333,12 +333,12 @@ hr {
 }
 
 #frontpageImage h1 {
-  font-size: 5%;
+  font-size: 2.5em;
   font-weight: 100;
 }
 
 #frontpageImage h2 {
-  font-size: 3%;
+  font-size: 1em;
 }
 
 .socialMedia {
