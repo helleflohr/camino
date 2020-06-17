@@ -141,6 +141,10 @@ class SpaService {
       tabbar.classList.remove("hide");
     }
   }
+
+  reloadPage() {
+    window.location.reload();
+  }
 }
 const spaService = new SpaService();
 export default spaService;
