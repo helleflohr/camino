@@ -12,11 +12,15 @@ import slideService from "./services/slide.js";
 
 import crudService from "./services/crud.js";
 import loaderService from "./services/loader.js";
+import stageCircles from "./components/stageCircles.js";
 
 
 
 // Declare and init pages
 let homePage = new HomePage();
+
+
+stageCircles.template();
 
 loaderService.show(true);
 spaService.init();

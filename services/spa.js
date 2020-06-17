@@ -3,6 +3,7 @@ import mapService from "./map.js";
 import scrollService from "./nav.js"
 import loaderService from "./loader.js"
 import fetchService from "./fetch.js"
+import stageCircles from "./../components/stageCircles.js"
 import {
   map
 } from "./../main.js";
@@ -10,6 +11,7 @@ class SpaService {
   constructor() {
     this.defaultPage = "home";
     this.counter = 0;
+    this.navCounter = 0;
     this.visitedPages = [];
   }
 
@@ -59,8 +61,6 @@ class SpaService {
   // ---------------  Maja ---------------
   pageChange() {
 
-
-
     let page = this.defaultPage;
     if (window.location.hash) {
       page = window.location.hash.slice(1);
@@ -83,10 +83,18 @@ class SpaService {
       if (page === 'grid-posts') {
         document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
         document.querySelector('.maparea').style.display = 'block'; // show content
+        document.querySelector('aside').style.display = 'block'; // show aside
 
         scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
         if (this.visitedPages[0] !== page) {
           scrollService.createFirstTabUnderline(scrollService.chosenNumber) // Create a underline, if this page wasn´t loaded first
+        }
+
+        if (this.navCounter === 0) { // create markers the first time, the map is visited
+          // mapInfoService.createMarkers();
+
+          stageCircles.template();
+          this.navCounter++
         }
         loaderService.show(false) // turn off the loader
 
@@ -95,16 +103,20 @@ class SpaService {
         if (window.innerWidth <= 1024) { // Hide or show elements based on screen width
           document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
           document.querySelector('.maparea').style.display = 'none'; // remove content
+          document.querySelector('aside').style.display = 'none'; // remove aside
         } else {
           document.querySelector('.navigationEtape').style.display = 'block'; // show aside
           document.querySelector('.maparea').style.display = 'block'; // show content
+          document.querySelector('aside').style.display = 'block'; // show aside
         }
+
         loaderService.show(false) // turn off the loader
 
 
       } else if (page === 'mapid') {
         document.querySelector('.navigationEtape').style.display = 'block'; // show aside
         document.querySelector('.maparea').style.display = 'block'; // show content
+        document.querySelector('aside').style.display = 'block'; // show aside
         if (this.visitedPages[0] !== page) { // if map wasn´t the first page
           map._onResize(); // run the map
         }
@@ -112,6 +124,7 @@ class SpaService {
         if (this.counter === 0) { // create markers the first time, the map is visited
           // mapInfoService.createMarkers();
           fetchService.fetchMarkers()
+          stageCircles.template();
           this.counter++
         }
       }
