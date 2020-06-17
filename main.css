@@ -256,7 +256,7 @@ hr {
 .navbtn {
   display: block;
   width: 50%;
-  padding-top: 10%;
+  /* padding-top: 10%; */
   /* height: 14%; */
   border-radius: 50%;
   border: 2px solid var(--text-color-light);
@@ -1121,7 +1121,7 @@ form button {
   } */
 
   .tabNav {
-    font-size: 1.7%;
+    font-size: 1em;
   }
 }
 
@@ -1147,6 +1147,7 @@ form button {
     position: absolute;
     height: 10%;
     overflow: visible;
+    display: block;
   }
 
   #frontpageSection {
@@ -1195,7 +1196,7 @@ form button {
   }
 
   aside h3 {
-    font-size: 3%;
+    font-size: 1.6em;
   }
 
   #logoDark {
@@ -1238,7 +1239,11 @@ form button {
   }
 
   #frontpageImage h1 {
-    font-size: 10%;
+    font-size: 5em;
+  }
+
+  #frontpageImage h2 {
+    font-size: 3em;
   }
 
   #content {
