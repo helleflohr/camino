@@ -139,7 +139,7 @@ aside {
   color: var(--camino-blue);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 1.4%;
+  font-size: .6em;
   margin-left: 0;
 }
 
@@ -247,6 +247,7 @@ hr {
   /* padding-top: 113%; */
   /* width: 10vw; */
 }
+
 /* aside {
   height: 100%;
   width: 10vw;
@@ -439,7 +440,7 @@ aside h3 {
   /* margin: 1em 0 .5em; */
   margin-top: 2%;
   height: 3%;
-  
+
 }
 
 .boxIcon {
@@ -635,7 +636,8 @@ aside h3 {
   max-width: 100%;
 
   /* Height untill bodyLoad */
-  height: calc(var(--vh, 1vh) * 30);;
+  height: calc(var(--vh, 1vh) * 30);
+  ;
   cursor: pointer;
 }
 
