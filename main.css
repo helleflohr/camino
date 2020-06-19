@@ -1097,7 +1097,7 @@ form button {
 
 .tabbar img {
   /* height: 5em; */
-  max-height: 45%;
+  max-height: 3em;
   display: block;
   margin: 0 auto 10%;
   fill: var(--camino-yellow);
@@ -1126,11 +1126,17 @@ form button {
   #frontpageLogo {
     width: 50%;
   }
-}
 
-@media only screen and (min-width: 720px) {
   #frontpageImage {
     background-image: url(images/lake-tablet.jpg);
+  }
+
+  .tabbar img {
+    /* height: 5em; */
+    max-height: 2.3em;
+    display: block;
+    margin: 0 auto 3%;
+    fill: var(--camino-yellow);
   }
 }
 
@@ -1151,6 +1157,7 @@ form button {
   #frontpageSection {
     margin-bottom: 0;
   }
+
 
   #mapid {
     width: 90vw;
