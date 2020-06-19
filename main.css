@@ -350,9 +350,6 @@ hr {
   height: 2em;
 }
 
-
-
-
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
@@ -389,13 +386,13 @@ h2 {
 }
 
 #frontpageSection .mapArrow {
-  left: 27vw;
+  left: 32%;
   top: 7%;
   transform: rotate(90deg);
 }
 
 #frontpageSection .generalArrow {
-  left: 17vw;
+  left: 17%;
   top: 0;
   transform: rotate(-60deg);
 }
@@ -1146,7 +1143,7 @@ form button {
     opacity: .2;
     display: block;
     position: absolute;
-    height: 10%;
+    height: 20%;
     overflow: visible;
     display: block;
   }
@@ -1196,9 +1193,11 @@ form button {
   .dropdown .zoomMap {
     display: block;
   }
-aside{
-  width: 10vw;
-}
+
+  aside {
+    width: 10vw;
+  }
+
   aside h3 {
     font-size: 1.6em;
   }
