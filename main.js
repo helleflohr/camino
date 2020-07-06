@@ -1,5 +1,6 @@
 // import your hideAllPages
 import HomePage from "./pages/home.js";
+import ApprovePage from "./pages/approve.js"
 
 // import your services
 import fetchService from "./services/fetch.js"
@@ -18,6 +19,7 @@ import stageCircles from "./components/stageCircles.js";
 
 // Declare and init pages
 let homePage = new HomePage();
+let approvePage = new ApprovePage();
 
 
 stageCircles.template();
@@ -57,7 +59,6 @@ window.showSlides = (n, number) => slideService.showSlides(n, number);
 // window.validateForm = (number) => crudService.validateForm(number);
 window.reloadPage = () => spaService.reloadPage();
 
-
 // ---------------  Maja ---------------
 // Set map coordinates for different devices
 export let latitude = 55.356480;
@@ -79,4 +80,3 @@ export let map = new L.Map("mapid", {
     center: new L.LatLng(latitude, longitude),
     zoom: zoom
 });
-
