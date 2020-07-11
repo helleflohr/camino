@@ -131,7 +131,8 @@ class CrudService {
       name: nameInput.value,
       text: textInput.value,
       image: imageInput.src,
-      etape: number
+      etape: number,
+      approved: false
     };
 
     this._dataRef.add(newPost).then(() => {

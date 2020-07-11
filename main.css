@@ -1108,6 +1108,30 @@ form button {
   color: var(--camino-yellow);
 }
 
+/* -------- Approve page ---------*/
+#unApprovedPosts,
+#approvedPosts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postSection {
+  width: 100%;
+}
+
+.postSection h2 {
+  text-align: center;
+}
+
+.approvedImage {
+  margin-right: 10%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.approvedImage img {
+  width: 100%;
+}
 
 @media only screen and (min-width: 500px) {
   /* .navigationEtape {
@@ -1119,6 +1143,10 @@ form button {
 
   .tabNav {
     font-size: 1em;
+  }
+
+  .postSection {
+    width: 50%;
   }
 }
 
@@ -1137,6 +1165,10 @@ form button {
     display: block;
     margin: 0 auto 3%;
     fill: var(--camino-yellow);
+  }
+
+  .postSection {
+    width: 33%;
   }
 }
 

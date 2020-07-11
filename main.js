@@ -58,6 +58,8 @@ window.plusSlides = (n, number) => slideService.plusSlides(n, number);
 window.showSlides = (n, number) => slideService.showSlides(n, number);
 // window.validateForm = (number) => crudService.validateForm(number);
 window.reloadPage = () => spaService.reloadPage();
+window.deletePost = (postId) => approvePage.deletePost(postId);
+window.approvePost = (postId) => approvePage.approvePost(postId);
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

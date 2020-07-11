@@ -41,32 +41,36 @@ export default class ApprovePage {
         //     return x.acf.stageNumber - y.acf.stageNumber;
         // });
 
+
         for (let post of posts) {
-            if (post.state === true) {
+            console.log(post.id)
+            if (post.approved === true) {
                 document.querySelector("#approvedPosts").innerHTML += `
-                <section class="approvedPostSection">
-                <div class="sayImage">
+                <section class="postSection">
+                <h2>Etape '${post.etape}'</h2>
+                <div class="approvedImage">
                 <img src="${post.image}">
                 </div>
                 <div class="sayText">
                 <p>"${post.text}"</p>
                 <p>-${post.name}</p>
                 </div>
-                <button>Slet</button>
+                <button onclick="delete('${post.id}')">Slet</button>
                 </section>
             `
             } else {
                 document.querySelector("#unApprovedPosts").innerHTML += `
-            <section class="approvedPostSection">
-            <div class="sayImage">
+            <section class="postSection">
+            <h2>Etape '${post.etape}'</h2>
+            <div class="approvedImage">
             <img src="${post.image}">
             </div>
             <div class="sayText">
             <p>"${post.text}"</p>
             <p>-${post.name}</p>
             </div>
-            <button>Godkend</button>
-            <button>Slet</button>
+            <button onclick="approvePost('${post.id}')">Godkend</button>
+            <button onclick="deletePost('${post.id}')">Slet</button>
             </section>
         `
             }
@@ -76,5 +80,16 @@ export default class ApprovePage {
         loaderService.show(false);
     };
 
+    deletePost(id) {
+        console.log("Delete");
+        this._dataRef.doc(id).delete();
+    };
+
+    approvePost(id) {
+        this._dataRef.doc(id).update({
+            approved: true
+        }).then(() => this.read());
+
+    };
 
 }
