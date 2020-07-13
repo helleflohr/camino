@@ -58,6 +58,11 @@ h3 {
   letter-spacing: 0.2em;
 }
 
+h4{
+  font-size: 2em;
+  letter-spacing: 0.1em;
+}
+
 a {
   text-decoration: none;
 }
@@ -884,12 +889,12 @@ form button {
 .imagePopup {
   position: fixed;
   display: none;
-  top: 45%;
+  top: 35%;
   left: 0;
-  width: 90vw;
-  height: 55%;
+  width: 87vw;
+  height: 65%;
   background-color: rgba(0, 0, 0, 0.662);
-  z-index: 2;
+  z-index: 9995;
 }
 
 .container {
@@ -1010,7 +1015,9 @@ form button {
 .leaflet-control-layers-base label {
   width: 49%;
 }
-
+.leaflet-popup-content{
+  width: 30%;
+}
 .leaflet-popup-content p {
   color: var(--camino-blue);
 }
@@ -1132,6 +1139,45 @@ form button {
   color: var(--camino-yellow);
 }
 
+/* -------- Approve page ---------*/
+#admin {
+  text-align: center;
+}
+
+#approve h2 {
+  text-align: left;
+}
+
+.leftH3 {
+  text-align: left;
+  margin-top: 2em;
+}
+
+#unApprovedPosts,
+#approvedPosts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2em;
+}
+
+.postSection {
+  width: 100%;
+}
+
+.centerH3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.approvedImage {
+  margin-right: 10%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.approvedImage img {
+  width: 100%;
+}
 
 @media only screen and (min-width: 500px) {
   /* .navigationEtape {
@@ -1143,6 +1189,10 @@ form button {
 
   .tabNav {
     font-size: 1em;
+  }
+
+  .postSection {
+    width: 50%;
   }
 }
 
@@ -1161,6 +1211,10 @@ form button {
     display: block;
     margin: 0 auto 3%;
     fill: var(--camino-yellow);
+  }
+
+  .postSection {
+    width: 33%;
   }
 }
 
