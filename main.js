@@ -1,6 +1,6 @@
 // import your hideAllPages
 import HomePage from "./pages/home.js";
-import AdminPage from "./pages/admin.js"
+import adminService from "./services/admin.js";
 
 // import your services
 import fetchService from "./services/fetch.js"
@@ -19,7 +19,7 @@ import stageCircles from "./components/stageCircles.js";
 
 // Declare and init pages
 let homePage = new HomePage();
-let adminPage = new AdminPage();
+
 
 
 stageCircles.template();
@@ -57,8 +57,8 @@ window.appendPosts = (etapeNr) => crudService.appendPosts(etapeNr);
 window.plusSlides = (n, number) => slideService.plusSlides(n, number);
 window.showSlides = (n, number) => slideService.showSlides(n, number);
 window.reloadPage = () => spaService.reloadPage();
-window.deletePost = (postId) => adminPage.deletePost(postId);
-window.approvePost = (postId) => adminPage.approvePost(postId);
+window.deletePost = (postId) => adminService.deletePost(postId);
+window.approvePost = (postId) => adminService.approvePost(postId);
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices
