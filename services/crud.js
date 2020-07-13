@@ -19,8 +19,10 @@ class CrudService {
       this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
       snapshotData.forEach(doc => { // loop through snapshotData - like for of loop
         let post = doc.data(); // save the data in a variable
-        post.id = doc.id; // add the id to the data variable
-        this._posts.push(post); // push the data object to the global array _posts
+        if (post.approved === true) {
+          post.id = doc.id; // add the id to the data variable
+          this._posts.push(post); // push the data object to the global array _posts
+        }
       });
     });
   }
@@ -131,7 +133,8 @@ class CrudService {
       name: nameInput.value,
       text: textInput.value,
       image: imageInput.src,
-      etape: number
+      etape: number,
+      approved: false
     };
 
     this._dataRef.add(newPost).then(() => {

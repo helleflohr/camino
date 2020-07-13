@@ -38,8 +38,8 @@ class MapInfoService {
 
         // --------------- Set the icons for the differet categories ---------------
         let Seng = new iconClass({
-            iconUrl: 'images/ikoner-map/Seng.svg'
-        }),
+                iconUrl: 'images/ikoner-map/Seng.svg'
+            }),
             Kirker = new iconClass({
                 iconUrl: 'images/ikoner-map/Kirker.svg'
             }),
@@ -199,7 +199,6 @@ class MapInfoService {
 
         L.control.browserPrint.mode.custom();
         L.control.browserPrint.mode.landscape();
-        L.control.browserPrint.mode.portrait();
     }
     // --------------- Printer function - End ---------------
 

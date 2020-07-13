@@ -33,6 +33,8 @@ class SpaService {
 
   // show page or tab
   showPage(pageId) {
+    console.log(pageId);
+
     if (window.innerWidth <= 1024) {
       this.hideAllPages();
       document.querySelector(`#${pageId}`).style.display = "block";

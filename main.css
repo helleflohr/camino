@@ -350,9 +350,6 @@ hr {
   height: 2em;
 }
 
-
-
-
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
@@ -389,13 +386,13 @@ h2 {
 }
 
 #frontpageSection .mapArrow {
-  left: 27vw;
+  left: 32%;
   top: 7%;
   transform: rotate(90deg);
 }
 
 #frontpageSection .generalArrow {
-  left: 17vw;
+  left: 17%;
   top: 0;
   transform: rotate(-60deg);
 }
@@ -1100,7 +1097,7 @@ form button {
 
 .tabbar img {
   /* height: 5em; */
-  max-height: 45%;
+  max-height: 3em;
   display: block;
   margin: 0 auto 10%;
   fill: var(--camino-yellow);
@@ -1111,6 +1108,45 @@ form button {
   color: var(--camino-yellow);
 }
 
+/* -------- Approve page ---------*/
+#approve {
+  text-align: center;
+}
+
+#approve h2 {
+  text-align: left;
+}
+
+.leftH3 {
+  text-align: left;
+  margin-top: 2em;
+}
+
+#unApprovedPosts,
+#approvedPosts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2em;
+}
+
+.postSection {
+  width: 100%;
+}
+
+.centerH3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.approvedImage {
+  margin-right: 10%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.approvedImage img {
+  width: 100%;
+}
 
 @media only screen and (min-width: 500px) {
   /* .navigationEtape {
@@ -1123,17 +1159,31 @@ form button {
   .tabNav {
     font-size: 1em;
   }
+
+  .postSection {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 720px) {
   #frontpageLogo {
     width: 50%;
   }
-}
 
-@media only screen and (min-width: 720px) {
   #frontpageImage {
     background-image: url(images/lake-tablet.jpg);
+  }
+
+  .tabbar img {
+    /* height: 5em; */
+    max-height: 2.3em;
+    display: block;
+    margin: 0 auto 3%;
+    fill: var(--camino-yellow);
+  }
+
+  .postSection {
+    width: 33%;
   }
 }
 
@@ -1146,7 +1196,7 @@ form button {
     opacity: .2;
     display: block;
     position: absolute;
-    height: 10%;
+    height: 20%;
     overflow: visible;
     display: block;
   }
@@ -1154,6 +1204,7 @@ form button {
   #frontpageSection {
     margin-bottom: 0;
   }
+
 
   #mapid {
     width: 90vw;
@@ -1196,9 +1247,11 @@ form button {
   .dropdown .zoomMap {
     display: block;
   }
-aside{
-  width: 10vw;
-}
+
+  aside {
+    width: 10vw;
+  }
+
   aside h3 {
     font-size: 1.6em;
   }

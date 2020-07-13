@@ -114,7 +114,7 @@ export default class HomePage {
     <article id="stage${post.acf.stageNumber}" class="grid-item" onmouseover="goTo(${post.acf.stageNumber})" onmouseout="goFrom(${post.acf.stageNumber})">
 
     <!--------- Etapeimages on the map ------->
-      <section class="backgroundimg" style="background-image: url('${getFeaturedImageUrl(post)}')" onclick="chosen(${post.acf.stageNumber})" >
+      <section class="backgroundimg" style="background-image: url('${this.getFeaturedImageUrl(post)}')" onclick="chosen(${post.acf.stageNumber})" >
         <div id="text-backgroundimg">
           <div class="title-distance">
       
