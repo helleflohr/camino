@@ -24,8 +24,9 @@ export default class ApprovePage {
     }
 
     read() {
+        this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
         this._dataRef.onSnapshot(snapshotData => { //each time the contents change, another call updates the document snapshot.
-            this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
+
             snapshotData.forEach(doc => { // loop through snapshotData - like for of loop
                 let post = doc.data(); // save the data in a variable
                 post.id = doc.id; // add the id to the data variable
