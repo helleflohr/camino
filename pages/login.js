@@ -6,11 +6,11 @@ export default class LoginPage {
   template() {
     document.getElementById('content').innerHTML += /*html*/ `
       <section id="login" class="page">
-        <header class="topbar">
-          <h2>Login</h2>
-        </header>
+        
+          
+      
         <!-- firebase auth container  -->
-        <section id="firebaseui-auth-container"></section>
+        <section id="firebaseui-auth-container"><h2>Login</h2></section>
       </section>
     `;
   }

@@ -34,11 +34,11 @@ class SpaService {
 
   // show page or tab
   showPage(pageId) {
-    console.log(pageId);
     if (pageId === 'admin' || pageId === 'login') {
-      console.log(pageId)
       this.hideAllPages();
-      document.querySelector(`#${pageId}`).style.display = "block";
+      let page = document.querySelector(`#${pageId}`);
+      if (page != undefined)
+        page.style.display = "block";
     } else {
       if (window.innerWidth <= 1024) {
         this.hideAllPages();
@@ -77,14 +77,12 @@ class SpaService {
     }
 
     if (page === 'admin' || page === 'login') {
-      /* document.querySelector(`#${page}`).style.display = 'block' */
+
       document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
       document.querySelector('.maparea').style.display = 'none'; // remove content
       document.querySelector('aside').style.display = 'none'; // remove aside
       document.querySelector('.tabbar').style.display = 'none'; // remove aside
 
-      authService.init();
-      console.log('auth')
       this.showPage(page);
       loaderService.show(false) // turn off the loader
     } else {
@@ -164,7 +162,7 @@ class SpaService {
 
   // show and hide tabbar
   hideTabbar(hide) {
-    console.log(hide)
+    // console.log(hide)
     // let tabbar = document.querySelector('#tabbar');
     // if (hide) {
     //   tabbar.classList.add("hide");

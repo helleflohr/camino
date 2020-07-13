@@ -63,7 +63,7 @@ class AdminService {
                 <p>"${post.text}"</p>
                 <p>-${post.name}</p>
                 </div>
-                <button onclick="deletePost('${post.id}')">Slet</button>
+                <button class="approveBtn" onclick="deletePost('${post.id}')">Slet</button>
                 </section>
             `
             } else {
@@ -77,8 +77,8 @@ class AdminService {
                 <p>"${post.text}"</p>
                 <p>-${post.name}</p>
                 </div>
-                <button onclick="approvePost('${post.id}')">Godkend</button>
-                <button onclick="deletePost('${post.id}')">Slet</button>
+                <button class="approveBtn" onclick="approvePost('${post.id}')">Godkend</button>
+                <button class="approveBtn" onclick="deletePost('${post.id}')">Slet</button>
                 </section>
             `
             }
@@ -89,11 +89,15 @@ class AdminService {
     };
 
     deletePost(id) {
-        console.log("Delete");
-        this._dataRef.doc(id).delete();
+        console.log("You are trying to delete");
+        let result = confirm("Er du sikker på at du vil slette?");
+        if (result) {
+            this._dataRef.doc(id).delete();
+        }
     };
 
     approvePost(id) {
+        console.log("You are trying to approve");
         this._dataRef.doc(id).update({
             approved: true
         })

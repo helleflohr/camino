@@ -58,11 +58,12 @@ h3 {
   letter-spacing: 0.2em;
 }
 
-h4{
+h4 {
   font-size: 2em;
   letter-spacing: 0.1em;
 }
-.logout h4{
+
+.logout h4 {
   color: var(--camino-yellow);
   font-size: 1.8em;
   letter-spacing: 0;
@@ -1017,9 +1018,11 @@ form button {
 .leaflet-control-layers-base label {
   width: 49%;
 }
-.leaflet-popup-content{
+
+.leaflet-popup-content {
   width: 30%;
 }
+
 .leaflet-popup-content p {
   color: var(--camino-blue);
 }
@@ -1106,7 +1109,8 @@ form button {
 }
 
 /* ---------- tabbar styling ---------- */
-.tabbar, .logout {
+.tabbar,
+.logout {
   background-color: var(--camino-green);
   width: 100vw;
   position: fixed;
@@ -1119,7 +1123,7 @@ form button {
   justify-content: space-between;
 }
 
-.logout{
+.logout {
   display: none;
 }
 
@@ -1152,6 +1156,7 @@ form button {
 /* -------- Approve page ---------*/
 #admin {
   text-align: center;
+  margin: 0 2em;
 }
 
 #approve h2 {
@@ -1168,6 +1173,25 @@ form button {
   display: flex;
   flex-wrap: wrap;
   margin: 0 2em;
+}
+
+.approveBtn {
+  text-align: center;
+  color: var(--text-color-dark);
+  background-color: var(--background-light);
+  border-radius: 25px;
+  width: auto;
+  margin-bottom: 1em;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 2% 7%;
+}
+
+.approveBtn:focus,
+.approveBtn:hover {
+  outline: none;
+  color: var(--text-color-light);
+  background-color: var(--camino-blue);
 }
 
 .postSection {
@@ -1198,6 +1222,11 @@ form button {
   transform: translateY(-50%);
 }
 
+#firebaseui-auth-container h2 {
+  text-align: center;
+  margin: 1em;
+}
+
 .firebaseui-container {
   font-family: var(--font-family);
   font: 16px var(--font-family);
@@ -1213,7 +1242,7 @@ form button {
 .mdl-button--raised.mdl-button--colored,
 .mdl-button--raised.mdl-button--colored:active,
 .mdl-button--raised.mdl-button--colored:hover {
-  background: var(--green);
+  background: var(--camino-blue);
   color: #fff;
   border-radius: 0;
 }
@@ -1225,7 +1254,7 @@ form button {
 
 
 @media only screen and (min-width: 500px) {
- 
+
 
   .tabNav {
     font-size: 1em;
@@ -1260,32 +1289,33 @@ form button {
 
 @media only screen and (min-width: 1025px) {
 
- /* ---------- Navbar ---------- */
- #navbar {
-  width: 100%;
-  margin-bottom: -10%;
-}
+  /* ---------- Navbar ---------- */
+  #navbar {
+    width: 100%;
+    margin-bottom: -10%;
+  }
 
-#navbar ul {
-  list-style-type: none;
-}
+  #navbar ul {
+    list-style-type: none;
+  }
 
-#navbar li {
-  float: right; margin-right: 2%;
-  padding: 2% 2% 0 0;
-  font-size: 1.2em;
-}
+  #navbar li {
+    float: right;
+    margin-right: 2%;
+    padding: 2% 2% 0 0;
+    font-size: 1.2em;
+  }
 
-#navbar a {
-  display: block;
-  color: var(--text-color-light);
-}
+  #navbar a {
+    display: block;
+    color: var(--text-color-light);
+  }
 
-#navbar li a:hover {
-  text-decoration: underline;
-}
+  #navbar li a:hover {
+    text-decoration: underline;
+  }
 
-/* -------------------- */
+  /* -------------------- */
 
   #frontpageImage {
     background-image: url(images/lake.jpg);
@@ -1346,15 +1376,16 @@ form button {
   .dropdown .zoomMap {
     display: block;
   }
-  .logout{
+
+  .logout {
     width: 10vw;
     position: fixed;
     top: 0;
     bottom: 0;
-   left: 90vw;
+    left: 90vw;
     z-index: 9;
     height: 100%;
-
+    cursor: pointer;
   }
 
   aside {
@@ -1444,7 +1475,8 @@ form button {
   }
 
   #frontpageSection img {
-    height: 4%; margin-top: 4%;
+    height: 4%;
+    margin-top: 4%;
   }
 
   /* --------------------- Leaflet (map controls) -------------------*/

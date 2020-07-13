@@ -26,18 +26,16 @@ class AuthService {
     userAuthenticated(user) {
         console.log(user.uid)
         if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82') {
-            console.log(' i am admin')
             spaService.hideTabbar(false);
             // this.initAuthUserRef();
             adminService.init(); // Bliver først vist når det er authenticated
             spaService.showPage('admin');
             document.querySelector('.logout').style.display = 'block'; // remove aside
             loaderService.show(false);
+            document.querySelector('#firebaseui-auth-container').style.display = 'none';
         } else {
             console.log(' i am not admin')
         }
-
-
     }
 
     userNotAuthenticated() {
@@ -57,66 +55,13 @@ class AuthService {
         loaderService.show(false);
     }
 
-    // initAuthUserRef() {
-    //     let authUser = firebase.auth().currentUser;
-    //     this.authUserRef = firebaseService._db.collection("users").doc(authUser.uid);
-
-    //     // init user data and favourite movies
-    //     this.authUserRef.onSnapshot({
-    //         includeMetadataChanges: true
-    //     }, userData => {
-    //         if (!userData.metadata.hasPendingWrites) {
-    //             let user = {
-    //                 ...authUser,
-    //                 ...userData.data()
-    //             }; //concating two objects: authUser object and userData objec from the db
-    //             this.authUser = user;
-    //             // this.appendAuthUser();
-    //             // firebaseService.getPostRef();
-    //             loaderService.show(false);
-    //         }
-    //     });
-    // }
-
     logout() {
-        // document.querySelector('#admin').style.display = 'none'; // remove aside
-        // document.querySelector('#login').style.display = 'none'; // remove content
         document.querySelector('.logout').style.display = 'none'; // remove aside
-        firebase.auth().signOut();
+        firebase.auth().signOut().then(() => {
+            console.log("Redirect to Home");
+            window.location.href = '/#home';
+        });
     }
-
-    // appendAuthUser() {
-    //     document.querySelector('#name').value = this.authUser.displayName || "";
-    //     document.querySelector('#mail').value = this.authUser.email;
-    //     document.querySelector('#birthdate').value = this.authUser.birthdate || "";
-    //     document.querySelector('#hairColor').value = this.authUser.hairColor || "";
-    //     document.querySelector('#imagePreview').src = this.authUser.img || "";
-    //     document.querySelector('#phone').value = this.authUser.phone || "";
-    // }
-
-    // updateAuthUser(name, img, birthdate, hairColor, phone) {
-    //     loaderService.show(true);
-
-    //     let user = firebase.auth().currentUser;
-
-    //     // update auth user
-    //     user.updateProfile({
-    //         displayName: name
-    //     });
-
-    //     // update database user
-    //     this.authUserRef.set({
-    //         img: img,
-    //         birthdate: birthdate,
-    //         hairColor: hairColor,
-    //         phone: phone
-    //     }, {
-    //         merge: true
-    //     }).then(() => {
-    //         loaderService.show(false);
-    //     });
-
-    // }
 }
 
 const authService = new AuthService();
