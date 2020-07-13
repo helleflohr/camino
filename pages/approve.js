@@ -11,7 +11,7 @@ export default class ApprovePage {
 
     template() {
         document.getElementById('content').innerHTML += /*html*/ `
-        <section id="approve" class="page">
+        <section id="admin" class="page">
             <h2>Godkend</h2>
          <p>På denne side kan du godkende eller slette opslag fra fanerne "Hvad siger andre". Opslagene vises ikke på selve hjemmesiden før de er blevet godkendt her.</p>
             <h3 class="leftH3">Godkend følgende nye opslag:</h3>
