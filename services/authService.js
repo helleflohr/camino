@@ -6,7 +6,7 @@ import adminService from "./admin.js";
 class AuthService {
     constructor() {
         this.ui = new firebaseui.auth.AuthUI(firebase.auth());
-        this.userRef = _db.collection("users");
+        this.userRef = firebaseService._db.collection("users");
         this.authUser;
         this.authUserRef;
     }
@@ -18,18 +18,25 @@ class AuthService {
                 this.userAuthenticated(user);
             } else { // if user is not logged in
                 this.userNotAuthenticated();
+                console.log('not authicated')
             }
         });
     }
 
     userAuthenticated(user) {
+        console.log(user.uid)
+
+
         spaService.hideTabbar(false);
-        this.initAuthUserRef();
-        adminService.init() // Bliver først vist når det er authenticated
+        // this.initAuthUserRef();
+        adminService.init(); // Bliver først vist når det er authenticated
+        spaService.showPage('admin');
+        document.querySelector('.logout').style.display = 'block'; // remove aside
         loaderService.show(false);
     }
 
     userNotAuthenticated() {
+        console.log('not authenticated')
         spaService.hideTabbar(true);
         spaService.navigateTo("login");
 
@@ -39,34 +46,37 @@ class AuthService {
             signInOptions: [
                 firebase.auth.EmailAuthProvider.PROVIDER_ID
             ],
-            signInSuccessUrl: '#approve'
+            signInSuccessUrl: '#admin'
         };
         this.ui.start('#firebaseui-auth-container', uiConfig);
         loaderService.show(false);
     }
 
-    initAuthUserRef() {
-        let authUser = firebase.auth().currentUser;
-        this.authUserRef = _db.collection("users").doc(authUser.uid);
+    // initAuthUserRef() {
+    //     let authUser = firebase.auth().currentUser;
+    //     this.authUserRef = firebaseService._db.collection("users").doc(authUser.uid);
 
-        // init user data and favourite movies
-        this.authUserRef.onSnapshot({
-            includeMetadataChanges: true
-        }, userData => {
-            if (!userData.metadata.hasPendingWrites) {
-                let user = {
-                    ...authUser,
-                    ...userData.data()
-                }; //concating two objects: authUser object and userData objec from the db
-                this.authUser = user;
-                this.appendAuthUser();
-                firebaseService.getPostRef();
-                loaderService.show(false);
-            }
-        });
-    }
+    //     // init user data and favourite movies
+    //     this.authUserRef.onSnapshot({
+    //         includeMetadataChanges: true
+    //     }, userData => {
+    //         if (!userData.metadata.hasPendingWrites) {
+    //             let user = {
+    //                 ...authUser,
+    //                 ...userData.data()
+    //             }; //concating two objects: authUser object and userData objec from the db
+    //             this.authUser = user;
+    //             // this.appendAuthUser();
+    //             // firebaseService.getPostRef();
+    //             loaderService.show(false);
+    //         }
+    //     });
+    // }
 
     logout() {
+        // document.querySelector('#admin').style.display = 'none'; // remove aside
+        // document.querySelector('#login').style.display = 'none'; // remove content
+        document.querySelector('.logout').style.display = 'none'; // remove aside
         firebase.auth().signOut();
     }
 
