@@ -37,7 +37,7 @@ class AuthService {
             signInOptions: [
                 firebase.auth.EmailAuthProvider.PROVIDER_ID
             ],
-            signInSuccessUrl: '#approve'
+            signInSuccessUrl: '#admin'
         };
         this.ui.start('#firebaseui-auth-container', uiConfig);
         loaderService.show(false);
