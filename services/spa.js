@@ -71,6 +71,7 @@ class SpaService {
     }
 
     if (page === 'admin' || page === 'login') {
+      /* document.querySelector(`#${page}`).style.display = 'block' */
       console.log('auth')
     } else {
 

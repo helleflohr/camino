@@ -1389,11 +1389,12 @@ form button {
 
   #frontpageSection p {
     height: 16%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    margin-top: 5%;
   }
 
   #frontpageSection img {
-    height: 3%;
+    height: 4%; margin-top: 4%;
   }
 
   /* --------------------- Leaflet (map controls) -------------------*/

@@ -25,7 +25,7 @@ class AuthService {
     userAuthenticated(user) {
         spaService.hideTabbar(false);
         this.initAuthUserRef();
-        adminService.init()
+        adminService.init() // Bliver først vist når det er authenticated
         loaderService.show(false);
     }
 
