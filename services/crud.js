@@ -120,29 +120,34 @@ class CrudService {
   //Johanne
   // add a new post to firestore (database)
   createPost(number) {
-    // references to the input fields in the modal with the correct stagenumber
-    let stageInput = document.querySelector(`#commentsModal${number}`)
+    this.validateForm(number)
+    if (this.validateForm() !== false) {
+      // references to the input fields in the modal with the correct stagenumber
+      let stageInput = document.querySelector(`#commentsModal${number}`)
 
-    //Finds the queryselector inside stageInput and makes a variable
-    let nameInput = stageInput.querySelector('.formName');
-    let textInput = stageInput.querySelector('.formText');
-    let imageInput = stageInput.querySelector('.imagePreview');
+      //Finds the queryselector inside stageInput and makes a variable
+      let nameInput = stageInput.querySelector('.formName');
+      let textInput = stageInput.querySelector('.formText');
+      let imageInput = stageInput.querySelector('.imagePreview');
 
-    //object with properties
-    let newPost = {
-      name: nameInput.value,
-      text: textInput.value,
-      image: imageInput.src,
-      etape: number,
-      approved: false
-    };
+      //object with properties
+      let newPost = {
+        name: nameInput.value,
+        text: textInput.value,
+        image: imageInput.src,
+        etape: number,
+        approved: false
+      };
 
-    this._dataRef.add(newPost).then(() => {
-      this.appendPosts(number);
-      slideService.showSlides(1, number);
-      scrollService.tabs('comments', number);
-      stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
-    });
+
+      this._dataRef.add(newPost).then(() => {
+        this.appendPosts(number);
+        slideService.showSlides(1, number);
+        scrollService.tabs('comments', number);
+        stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
+      });
+    }
+
   };
 
 

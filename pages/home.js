@@ -182,7 +182,7 @@ export default class HomePage {
     <div class="div-image-preview">
     <img src="" class="image-preview imagePreview">
   </div>
-    <p class="btnCreate" onclick="createPost(${post.acf.stageNumber}); validateForm(${post.acf.stageNumber})">Opret opslag</p>
+    <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
   </form>
   </div>
       </section>
