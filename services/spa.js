@@ -90,7 +90,7 @@ class SpaService {
       document.querySelector('#login').style.display = 'none'; // remove aside
 
 
-      authService.logout()
+      // authService.logout()
       console.log('not admin')
 
       // Only show loader the first time on each page

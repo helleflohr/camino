@@ -41,7 +41,7 @@ class AuthService {
     userNotAuthenticated() {
         console.log('not authenticated')
         spaService.hideTabbar(true);
-        spaService.navigateTo("login");
+        spaService.navigateTo("home");
 
         // Firebase UI configuration
         const uiConfig = {
@@ -57,10 +57,30 @@ class AuthService {
 
     logout() {
         document.querySelector('.logout').style.display = 'none'; // remove aside
-        firebase.auth().signOut().then(() => {
-            console.log("Redirect to Home");
-            window.location.href = '/#home';
-        });
+        if (document.querySelector('#admin') === false) {
+            console.log('den findes ikke')
+        } else {
+            console.log('den findes')
+            document.querySelector('#admin').style.display = 'none';
+
+        }
+
+        firebase.auth().signOut();
+        // if (window.innerWidth > 1024) { // 
+        spaService.navigateTo("home");
+        spaService.reloadPage()
+        // document.querySelector('.tabbar').style.display = 'block';
+        // } else {
+        //     document.querySelector('.navigationEtape').style.display = 'block'; // show aside
+        //     document.querySelector('.maparea').style.display = 'block'; // show content
+        //     document.querySelector('aside').style.display = 'block'; // show aside
+        // }
+        // loaderService.show(false)
+
+        //     .then(() => {
+        //         console.log("Redirect to Home");
+        //         window.location.href = '#home';
+        //     });
     }
 }
 
