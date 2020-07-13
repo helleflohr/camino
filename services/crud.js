@@ -195,10 +195,8 @@ class CrudService {
       alert("Beskrivelse skal udfyldes");
       return false;
     }
-
-
-
   }
+
 }
 
 const crudService = new CrudService();

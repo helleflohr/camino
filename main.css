@@ -58,6 +58,11 @@ h3 {
   letter-spacing: 0.2em;
 }
 
+h4{
+  font-size: 2em;
+  letter-spacing: 0.1em;
+}
+
 a {
   text-decoration: none;
 }
@@ -1010,7 +1015,9 @@ form button {
 .leaflet-control-layers-base label {
   width: 49%;
 }
-
+.leaflet-popup-content{
+  width: 30%;
+}
 .leaflet-popup-content p {
   color: var(--camino-blue);
 }
@@ -1066,6 +1073,30 @@ form button {
 .topbar h2 {
   margin: 0;
   font-weight: 300;
+}
+
+#navbar {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#navbar ul {
+  list-style-type: none;
+}
+
+#navbar li {
+  float: right;
+  padding: 5% 5% 0 0;
+  font-size: 0.9em;
+}
+
+#navbar a {
+  display: block;
+  color: var(--camino-blue);
+}
+
+#navbar li a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- tabbar styling ---------- */
@@ -1188,6 +1219,34 @@ form button {
 }
 
 @media only screen and (min-width: 1025px) {
+
+ /* ---------- Navbar ---------- */
+ #navbar {
+  width: 100%;
+  margin-bottom: -10%;
+}
+
+#navbar ul {
+  list-style-type: none;
+}
+
+#navbar li {
+  float: right; margin-right: 2%;
+  padding: 2% 2% 0 0;
+  font-size: 1.2em;
+}
+
+#navbar a {
+  display: block;
+  color: var(--text-color-light);
+}
+
+#navbar li a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- */
+
   #frontpageImage {
     background-image: url(images/lake.jpg);
   }
@@ -1296,11 +1355,11 @@ form button {
   }
 
   #frontpageImage h1 {
-    font-size: 5em;
+    font-size: 4.8em;
   }
 
   #frontpageImage h2 {
-    font-size: 3em;
+    font-size: 2.15em;
   }
 
   #content {
@@ -1528,4 +1587,5 @@ form button {
     text-decoration: none;
     cursor: pointer;
   }
+
 }

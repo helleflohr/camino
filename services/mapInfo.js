@@ -38,8 +38,8 @@ class MapInfoService {
 
         // --------------- Set the icons for the differet categories ---------------
         let Seng = new iconClass({
-                iconUrl: 'images/ikoner-map/Seng.svg'
-            }),
+            iconUrl: 'images/ikoner-map/Seng.svg'
+        }),
             Kirker = new iconClass({
                 iconUrl: 'images/ikoner-map/Kirker.svg'
             }),
@@ -114,13 +114,15 @@ class MapInfoService {
             if (post.acf.infotype === "Overnatning") { // if the category is stay
                 eval(name).push(L.marker([post.acf.latitude, post.acf.longitude], {
                     icon: eval(post.acf.typeOfStay) // use the icon for the type of stay
-                }).bindPopup(`<b>${post.title.rendered}</b><br>${post.content.rendered}`));
+                }).bindPopup(`<h4>${post.title.rendered}</h4><br>${post.content.rendered}`));
                 stayArr.push(post.acf.typeOfStay) // push the type of stay to array
 
             } else {
                 eval(name).push(L.marker([post.acf.latitude, post.acf.longitude], {
                     icon: eval(post.acf.infotype) // else use the category icon
-                }).bindPopup(`<b>${post.title.rendered}</b><br>${post.content.rendered}`));
+                }).bindPopup(`<div><h4>${post.title.rendered}</h4><br>${post.content.rendered}</div>`, {
+                    maxWidth: 560
+                }));
             }
         }
         iconArr = [...new Set(iconArr)]; // remove dublicate category types
@@ -199,6 +201,8 @@ class MapInfoService {
 
         L.control.browserPrint.mode.custom();
         L.control.browserPrint.mode.landscape();
+        L.control.browserPrint.mode.portrait();
+        L.control.browserPrint.mode.auto();
     }
     // --------------- Printer function - End ---------------
 
