@@ -121,7 +121,7 @@ class CrudService {
   // add a new post to firestore (database)
   createPost(number) {
     this.validateForm(number)
-    if (this.validateForm() !== false) {
+    if (this.validateForm(number) !== false) {
       // references to the input fields in the modal with the correct stagenumber
       let stageInput = document.querySelector(`#commentsModal${number}`)
 
@@ -139,13 +139,13 @@ class CrudService {
         approved: false
       };
 
-
       this._dataRef.add(newPost).then(() => {
         this.appendPosts(number);
         slideService.showSlides(1, number);
         scrollService.tabs('comments', number);
         stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
       });
+      alert("Du har nu oprettet et opslag som nu afventer godkendelse hos administrator");
     }
 
   };
