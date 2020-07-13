@@ -1,6 +1,7 @@
 import spaService from "./spa.js";
 import loaderService from "./loader.js";
 import firebaseService from "./firebase.js";
+import adminService from "./admin.js";
 
 class AuthService {
     constructor() {
@@ -24,6 +25,7 @@ class AuthService {
     userAuthenticated(user) {
         spaService.hideTabbar(false);
         this.initAuthUserRef();
+        adminService.init()
         loaderService.show(false);
     }
 
