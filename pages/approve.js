@@ -24,9 +24,9 @@ export default class ApprovePage {
     }
 
     read() {
-        this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
-        this._dataRef.onSnapshot(snapshotData => { //each time the contents change, another call updates the document snapshot.
 
+        this._dataRef.onSnapshot(snapshotData => { //each time the contents change, another call updates the document snapshot.
+            this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
             snapshotData.forEach(doc => { // loop through snapshotData - like for of loop
                 let post = doc.data(); // save the data in a variable
                 post.id = doc.id; // add the id to the data variable
@@ -37,13 +37,16 @@ export default class ApprovePage {
     }
 
     appendAllPosts(posts) {
-
+        let approvedPosts = document.querySelector("#approvedPosts");
+        approvedPosts.innerHTML = '';
+        let unApprovedPosts = document.querySelector("#unApprovedPosts");
+        unApprovedPosts.innerHTML = '';
 
 
         for (let post of posts) {
             console.log(post.id)
             if (post.approved === true) {
-                document.querySelector("#approvedPosts").innerHTML += `
+                approvedPosts.innerHTML += `
                 <section class="postSection">
                 <h3 class="centerH3">Etape '${post.etape}'</h3>
                 <div class="approvedImage">
@@ -53,11 +56,11 @@ export default class ApprovePage {
                 <p>"${post.text}"</p>
                 <p>-${post.name}</p>
                 </div>
-                <button onclick="delete('${post.id}')">Slet</button>
+                <button onclick="deletePost('${post.id}')">Slet</button>
                 </section>
             `
             } else {
-                document.querySelector("#unApprovedPosts").innerHTML += `
+                unApprovedPosts.innerHTML += `
             <section class="postSection">
             <h3 class="centerH3">Etape '${post.etape}'</h3>
             <div class="approvedImage">
@@ -86,7 +89,7 @@ export default class ApprovePage {
     approvePost(id) {
         this._dataRef.doc(id).update({
             approved: true
-        }).then(() => this.read());
+        })
 
     };
 
