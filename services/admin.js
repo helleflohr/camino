@@ -69,19 +69,19 @@ class AdminService {
             `
             } else {
                 unApprovedPosts.innerHTML += `
-            <section class="postSection">
-            <h3 class="centerH3">Etape '${post.etape}'</h3>
-            <div class="approvedImage">
-            <img src="${post.image}">
-            </div>
-            <div class="sayText">
-            <p>"${post.text}"</p>
-            <p>-${post.name}</p>
-            </div>
-            <button onclick="approvePost('${post.id}')">Godkend</button>
-            <button onclick="deletePost('${post.id}')">Slet</button>
-            </section>
-        `
+                <section class="postSection">
+                <h3 class="centerH3">Etape '${post.etape}'</h3>
+                <div class="approvedImage">
+                <img src="${post.image}">
+                </div>
+                <div class="sayText">
+                <p>"${post.text}"</p>
+                <p>-${post.name}</p>
+                </div>
+                <button onclick="approvePost('${post.id}')">Godkend</button>
+                <button onclick="deletePost('${post.id}')">Slet</button>
+                </section>
+            `
             }
 
         }

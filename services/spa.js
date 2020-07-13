@@ -71,7 +71,9 @@ class SpaService {
     }
 
     if (page === 'admin' || page === 'login') {
-      console.log('auth')
+      console.log(`#${page}`)
+      document.querySelector(`#${page}`).style.display = 'block';
+
     } else {
 
       // Only show loader the first time on each page
