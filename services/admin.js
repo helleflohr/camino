@@ -52,7 +52,6 @@ class AdminService {
 
 
         for (let post of posts) {
-            console.log(post.id)
             if (post.approved === true) {
                 approvedPosts.innerHTML += `
                 <section class="postSection">
