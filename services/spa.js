@@ -70,64 +70,69 @@ class SpaService {
 
     }
 
-    // Only show loader the first time on each page
-    if (this.visitedPages.indexOf(page) === -1) {
-      loaderService.show(true)
-    }
-    this.visitedPages.push(page)
-
-    if (window.innerWidth > 1024) { // if desktop navigate to frontpage
-      this.navigateTo('');
+    if (page === 'admin' || page === 'login') {
+      console.log('auth')
     } else {
-      this.showPage(page);
 
-      //
-      if (page === 'grid-posts') {
-        document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
-        document.querySelector('.maparea').style.display = 'block'; // show content
-        document.querySelector('aside').style.display = 'block'; // show aside
+      // Only show loader the first time on each page
+      if (this.visitedPages.indexOf(page) === -1) {
+        loaderService.show(true)
+      }
+      this.visitedPages.push(page)
 
-        scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
-        if (this.visitedPages[0] !== page) {
-          scrollService.createFirstTabUnderline(scrollService.chosenNumber) // Create a underline, if this page wasn´t loaded first
-        }
+      if (window.innerWidth > 1024) { // if desktop navigate to frontpage
+        this.navigateTo('');
+      } else {
+        this.showPage(page);
 
-        if (this.navCounter === 0) { // create markers the first time, the map is visited
-          // mapInfoService.createMarkers();
+        //
+        if (page === 'grid-posts') {
+          document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
+          document.querySelector('.maparea').style.display = 'block'; // show content
+          document.querySelector('aside').style.display = 'block'; // show aside
 
-          stageCircles.template();
-          this.navCounter++
-        }
-        loaderService.show(false) // turn off the loader
+          scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
+          if (this.visitedPages[0] !== page) {
+            scrollService.createFirstTabUnderline(scrollService.chosenNumber) // Create a underline, if this page wasn´t loaded first
+          }
+
+          if (this.navCounter === 0) { // create markers the first time, the map is visited
+            // mapInfoService.createMarkers();
+
+            stageCircles.template();
+            this.navCounter++
+          }
+          loaderService.show(false) // turn off the loader
 
 
-      } else if (page === 'home') {
-        if (window.innerWidth <= 1024) { // Hide or show elements based on screen width
-          document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
-          document.querySelector('.maparea').style.display = 'none'; // remove content
-          document.querySelector('aside').style.display = 'none'; // remove aside
-        } else {
+        } else if (page === 'home') {
+          if (window.innerWidth <= 1024) { // Hide or show elements based on screen width
+            document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
+            document.querySelector('.maparea').style.display = 'none'; // remove content
+            document.querySelector('aside').style.display = 'none'; // remove aside
+          } else {
+            document.querySelector('.navigationEtape').style.display = 'block'; // show aside
+            document.querySelector('.maparea').style.display = 'block'; // show content
+            document.querySelector('aside').style.display = 'block'; // show aside
+          }
+
+          loaderService.show(false) // turn off the loader
+
+
+        } else if (page === 'mapid') {
           document.querySelector('.navigationEtape').style.display = 'block'; // show aside
           document.querySelector('.maparea').style.display = 'block'; // show content
           document.querySelector('aside').style.display = 'block'; // show aside
-        }
-
-        loaderService.show(false) // turn off the loader
-
-
-      } else if (page === 'mapid') {
-        document.querySelector('.navigationEtape').style.display = 'block'; // show aside
-        document.querySelector('.maparea').style.display = 'block'; // show content
-        document.querySelector('aside').style.display = 'block'; // show aside
-        if (this.visitedPages[0] !== page) { // if map wasn´t the first page
-          map._onResize(); // run the map
-        }
-        loaderService.show(false) // turn off the loader
-        if (this.counter === 0) { // create markers the first time, the map is visited
-          // mapInfoService.createMarkers();
-          fetchService.fetchMarkers()
-          stageCircles.template();
-          this.counter++
+          if (this.visitedPages[0] !== page) { // if map wasn´t the first page
+            map._onResize(); // run the map
+          }
+          loaderService.show(false) // turn off the loader
+          if (this.counter === 0) { // create markers the first time, the map is visited
+            // mapInfoService.createMarkers();
+            fetchService.fetchMarkers()
+            stageCircles.template();
+            this.counter++
+          }
         }
       }
     }

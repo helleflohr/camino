@@ -1,8 +1,16 @@
 import firebaseService from '../services/firebase.js'
 import loaderService from "../services/loader.js"
 
-export default class AdminPage {
+class AdminService {
     constructor() {
+        // this.template();
+        // this._dataRef = firebaseService.getPostRef() // Global variable of collection "posts" in firebase
+        // this._posts = []; // global array
+        // this.read() // runs the function
+        // this.init()
+    }
+
+    init() {
         this.template();
         this._dataRef = firebaseService.getPostRef() // Global variable of collection "posts" in firebase
         this._posts = []; // global array
@@ -94,3 +102,5 @@ export default class AdminPage {
     };
 
 }
+const adminService = new AdminService();
+export default adminService;
