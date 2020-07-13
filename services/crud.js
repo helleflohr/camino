@@ -140,6 +140,7 @@ class CrudService {
       scrollService.tabs('comments', number);
       stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
     });
+
   };
 
 
@@ -187,10 +188,8 @@ class CrudService {
       alert("Beskrivelse skal udfyldes");
       return false;
     }
-
-
-
   }
+
 }
 
 const crudService = new CrudService();

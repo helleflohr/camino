@@ -54,7 +54,7 @@ window.triggerChooseImg = (number) => crudService.triggerChooseImg(number);
 window.appendPosts = (etapeNr) => crudService.appendPosts(etapeNr);
 window.plusSlides = (n, number) => slideService.plusSlides(n, number);
 window.showSlides = (n, number) => slideService.showSlides(n, number);
-// window.validateForm = (number) => crudService.validateForm(number);
+window.validateForm = (number) => crudService.validateForm(number);
 window.reloadPage = () => spaService.reloadPage();
 
 

@@ -17,12 +17,18 @@ export default class HomePage {
         </header> -->
           <!-- frontpage image and info bar -->
   <section id="frontpageImage" >
+  <div id="navbar"> 
+  <ul>
+      <li><a href="https://billund.dk/politik/landdistrikter/lag-midler/" target="_blank">LAG Vejen-Billund</a></li>
+      <li><a href="">Shop</a></li>
+    </ul>
+    </div>
   <div id="frontpageLogoDiv">
   <img id="frontpageLogo" src="images/cfhLogo.png">
   </div>
 <div id="frontpageTextDiv">
   <h1> Camino Frøs Herred</h1>
-  <h2>Åbner sig for natur, kultur og det åndelige</h2>
+  <h2>Åbner sig for natur, kultur og fordybelse</h2>
   </div>
   <div  class="socialMedia">
   <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
@@ -189,7 +195,6 @@ export default class HomePage {
         </div>
         
       </section>
-    
     </article> `
       // console.log(post.acf, post.acf.images)
     }
