@@ -25,14 +25,19 @@ class AuthService {
 
     userAuthenticated(user) {
         console.log(user.uid)
+        if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82') {
+            console.log(' i am admin')
+            spaService.hideTabbar(false);
+            // this.initAuthUserRef();
+            adminService.init(); // Bliver først vist når det er authenticated
+            spaService.showPage('admin');
+            document.querySelector('.logout').style.display = 'block'; // remove aside
+            loaderService.show(false);
+        } else {
+            console.log(' i am not admin')
+        }
 
 
-        spaService.hideTabbar(false);
-        // this.initAuthUserRef();
-        adminService.init(); // Bliver først vist når det er authenticated
-        spaService.showPage('admin');
-        document.querySelector('.logout').style.display = 'block'; // remove aside
-        loaderService.show(false);
     }
 
     userNotAuthenticated() {
