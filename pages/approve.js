@@ -13,11 +13,11 @@ export default class ApprovePage {
         document.getElementById('content').innerHTML += /*html*/ `
         <section id="approve" class="page">
             <h2>Godkend</h2>
-         
-            <h3>Godkend følgende nye opslag:</h3>
+         <p>På denne side kan du godkende eller slette opslag fra fanerne "Hvad siger andre". Opslagene vises ikke på selve hjemmesiden før de er blevet godkendt her.</p>
+            <h3 class="leftH3">Godkend følgende nye opslag:</h3>
             <div id="unApprovedPosts"></div>
 
-            <h3>Følgende opslag er allerede godkendt:</h3>
+            <h3 class="leftH3">Følgende opslag er allerede godkendt:</h3>
             <div id="approvedPosts"></div>
         </section>
       `;
@@ -36,10 +36,7 @@ export default class ApprovePage {
     }
 
     appendAllPosts(posts) {
-        //sort the posts by acf stagenumber in ascending order
-        // posts.sort(function (x, y) {
-        //     return x.acf.stageNumber - y.acf.stageNumber;
-        // });
+
 
 
         for (let post of posts) {
@@ -47,7 +44,7 @@ export default class ApprovePage {
             if (post.approved === true) {
                 document.querySelector("#approvedPosts").innerHTML += `
                 <section class="postSection">
-                <h2>Etape '${post.etape}'</h2>
+                <h3 class="centerH3">Etape '${post.etape}'</h3>
                 <div class="approvedImage">
                 <img src="${post.image}">
                 </div>
@@ -61,7 +58,7 @@ export default class ApprovePage {
             } else {
                 document.querySelector("#unApprovedPosts").innerHTML += `
             <section class="postSection">
-            <h2>Etape '${post.etape}'</h2>
+            <h3 class="centerH3">Etape '${post.etape}'</h3>
             <div class="approvedImage">
             <img src="${post.image}">
             </div>

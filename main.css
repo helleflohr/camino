@@ -1109,18 +1109,33 @@ form button {
 }
 
 /* -------- Approve page ---------*/
+#approve {
+  text-align: center;
+}
+
+#approve h2 {
+  text-align: left;
+}
+
+.leftH3 {
+  text-align: left;
+  margin-top: 2em;
+}
+
 #unApprovedPosts,
 #approvedPosts {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 2em;
 }
 
 .postSection {
   width: 100%;
 }
 
-.postSection h2 {
+.centerH3 {
   text-align: center;
+  margin-top: 1em;
 }
 
 .approvedImage {
