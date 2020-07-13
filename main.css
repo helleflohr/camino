@@ -884,12 +884,12 @@ form button {
 .imagePopup {
   position: fixed;
   display: none;
-  top: 45%;
+  top: 35%;
   left: 0;
-  width: 90vw;
-  height: 55%;
+  width: 87vw;
+  height: 65%;
   background-color: rgba(0, 0, 0, 0.662);
-  z-index: 2;
+  z-index: 9995;
 }
 
 .container {
