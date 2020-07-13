@@ -1,6 +1,6 @@
 // import your hideAllPages
 import HomePage from "./pages/home.js";
-import ApprovePage from "./pages/approve.js"
+import ApprovePage from "./pages/admin.js"
 
 // import your services
 import fetchService from "./services/fetch.js"
