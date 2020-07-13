@@ -4,6 +4,7 @@ import scrollService from "./nav.js"
 import loaderService from "./loader.js"
 import fetchService from "./fetch.js"
 import stageCircles from "./../components/stageCircles.js"
+import authService from "./authService.js"
 import {
   map
 } from "./../main.js";
@@ -71,7 +72,7 @@ class SpaService {
     }
 
     if (page === 'admin' || page === 'login') {
-      /* document.querySelector(`#${page}`).style.display = 'block' */
+      authService.init();
       console.log('auth')
     } else {
 

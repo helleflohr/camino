@@ -3,6 +3,7 @@ import HomePage from "./pages/home.js";
 import adminService from "./services/admin.js";
 
 // import your services
+import authService from "./services/authService.js"
 import fetchService from "./services/fetch.js"
 import spaService from "./services/spa.js";
 import mapService from "./services/map.js";
@@ -20,11 +21,10 @@ import stageCircles from "./components/stageCircles.js";
 // Declare and init pages
 let homePage = new HomePage();
 
-
-
 stageCircles.template();
 
 loaderService.show(true);
+authService.init();
 spaService.init();
 
 mapService.fetchGeoJson();
