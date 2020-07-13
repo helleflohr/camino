@@ -1,7 +1,7 @@
-import firebaseService from './../services/firebase.js'
-import loaderService from "./../services/loader.js"
+import firebaseService from '../services/firebase.js'
+import loaderService from "../services/loader.js"
 
-export default class ApprovePage {
+export default class AdminPage {
     constructor() {
         this.template();
         this._dataRef = firebaseService.getPostRef() // Global variable of collection "posts" in firebase
