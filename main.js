@@ -1,8 +1,11 @@
 // import your hideAllPages
 import HomePage from "./pages/home.js";
-import adminService from "./services/admin.js";
+import LoginPage from "./pages/login.js";
+
 
 // import your services
+import adminService from "./services/admin.js";
+import authService from "./services/authService.js";
 import fetchService from "./services/fetch.js"
 import spaService from "./services/spa.js";
 import mapService from "./services/map.js";
@@ -19,12 +22,12 @@ import stageCircles from "./components/stageCircles.js";
 
 // Declare and init pages
 let homePage = new HomePage();
-
-
+let loginPage = new LoginPage();
 
 stageCircles.template();
 
 loaderService.show(true);
+authService.init();
 spaService.init();
 
 mapService.fetchGeoJson();
@@ -59,6 +62,7 @@ window.showSlides = (n, number) => slideService.showSlides(n, number);
 window.reloadPage = () => spaService.reloadPage();
 window.deletePost = (postId) => adminService.deletePost(postId);
 window.approvePost = (postId) => adminService.approvePost(postId);
+window.logout = () => authService.logout();
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

@@ -10,7 +10,7 @@ class StageCircles {
 
         this.descriptions = await fetchService.getDescriptions();
         let numberOfStages = this.descriptions.length // Get save the number of stages
-        console.log(this.descriptions.length)
+
 
         let circles = "";
         for (let i = 1; i < (numberOfStages + 1); i++) { // for each stage...
@@ -33,7 +33,7 @@ class StageCircles {
         theCircleDiv.innerHTML = circles;
 
         let height = 90 / numberOfStages
-        console.log(height, numberOfStages)
+
         let eachCircle = theCircleDiv.querySelectorAll('div');
         for (const circle of eachCircle) {
             circle.style.height = `${height}%`;

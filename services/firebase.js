@@ -1,6 +1,6 @@
 class FirebaseService {
   constructor() {
-    this.db;
+    this._db;
     this.init();
     // this._posts = [];
   }
@@ -20,11 +20,11 @@ class FirebaseService {
     };
     // Initialize Firebase
     firebase.initializeApp(_firebaseConfig);
-    this.db = firebase.firestore();
+    this._db = firebase.firestore();
 
   }
   getPostRef() {
-    return this.db.collection("posts");
+    return this._db.collection("posts");
   }
 
   // read() {

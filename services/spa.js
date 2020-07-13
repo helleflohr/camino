@@ -4,6 +4,7 @@ import scrollService from "./nav.js"
 import loaderService from "./loader.js"
 import fetchService from "./fetch.js"
 import stageCircles from "./../components/stageCircles.js"
+import authService from "./authService.js"
 import {
   map
 } from "./../main.js";
@@ -34,11 +35,16 @@ class SpaService {
   // show page or tab
   showPage(pageId) {
     console.log(pageId);
-
-    if (window.innerWidth <= 1024) {
+    if (pageId === 'admin' || pageId === 'login') {
+      console.log(pageId)
       this.hideAllPages();
       document.querySelector(`#${pageId}`).style.display = "block";
-      this.setActiveTab(pageId);
+    } else {
+      if (window.innerWidth <= 1024) {
+        this.hideAllPages();
+        document.querySelector(`#${pageId}`).style.display = "block";
+        this.setActiveTab(pageId);
+      }
     }
   }
 
@@ -71,10 +77,23 @@ class SpaService {
     }
 
     if (page === 'admin' || page === 'login') {
-      console.log(`#${page}`)
-      document.querySelector(`#${page}`).style.display = 'block';
+      /* document.querySelector(`#${page}`).style.display = 'block' */
+      document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
+      document.querySelector('.maparea').style.display = 'none'; // remove content
+      document.querySelector('aside').style.display = 'none'; // remove aside
+      document.querySelector('.tabbar').style.display = 'none'; // remove aside
 
+      authService.init();
+      console.log('auth')
+      this.showPage(page);
+      loaderService.show(false) // turn off the loader
     } else {
+      document.querySelector('.logout').style.display = 'none'; // remove aside
+      document.querySelector('#login').style.display = 'none'; // remove aside
+
+
+      authService.logout()
+      console.log('not admin')
 
       // Only show loader the first time on each page
       if (this.visitedPages.indexOf(page) === -1) {
@@ -83,8 +102,10 @@ class SpaService {
       this.visitedPages.push(page)
 
       if (window.innerWidth > 1024) { // if desktop navigate to frontpage
+
         this.navigateTo('');
       } else {
+        // document.querySelector('.tabbar').style.display = 'block'; // remove aside
         this.showPage(page);
 
         //
@@ -143,12 +164,13 @@ class SpaService {
 
   // show and hide tabbar
   hideTabbar(hide) {
-    let tabbar = document.querySelector('#tabbar');
-    if (hide) {
-      tabbar.classList.add("hide");
-    } else {
-      tabbar.classList.remove("hide");
-    }
+    console.log(hide)
+    // let tabbar = document.querySelector('#tabbar');
+    // if (hide) {
+    //   tabbar.classList.add("hide");
+    // } else {
+    //   tabbar.classList.remove("hide");
+    // }
   }
 
   reloadPage() {
