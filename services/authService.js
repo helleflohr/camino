@@ -23,8 +23,8 @@ class AuthService {
     }
 
     userAuthenticated(user) {
-        if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82' /*cfh@mail.dk*/ || user.uid === 'jXl7mEtqUrgGhkNxNaFoguKFqQp1' /*caminofrosherred@mail.dk*/ ) {
-            spaService.hideTabbar(false);
+        if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82' /*cfh@mail.dk*/ || user.uid === 'jXl7mEtqUrgGhkNxNaFoguKFqQp1' /*caminofrosherred@mail.dk*/) {
+            // spaService.hideTabbar(false);
             adminService.init(); // Bliver først vist når det er authenticated
             spaService.showPage('admin');
             document.querySelector('.logout').style.display = 'block'; // remove aside
@@ -34,7 +34,7 @@ class AuthService {
     }
 
     userNotAuthenticated() {
-        spaService.hideTabbar(true);
+        // spaService.hideTabbar(true);
         spaService.navigateTo("home");
 
         // Firebase UI configuration
@@ -51,7 +51,7 @@ class AuthService {
 
     logout() {
         document.querySelector('.logout').style.display = 'none'; // remove aside
-        if (document.querySelector('#admin') === false) {} else {
+        if (document.querySelector('#admin') === false) { } else {
             document.querySelector('#admin').style.display = 'none';
 
         }

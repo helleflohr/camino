@@ -130,7 +130,7 @@ aside {
 #content {
   width: 100vw;
   height: calc(var(--vh, 1vh) * 90);
-  overflow: visible;
+  overflow: auto;
   background-color: var(--camino-blue);
 }
 
@@ -1446,7 +1446,7 @@ form button {
   #content {
     width: 90vw;
     height: calc(var(--vh, 1vh) * 100);
-    overflow: visible;
+    overflow: auto;
   }
 
   #frontpageSection {
