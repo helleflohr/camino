@@ -72,8 +72,6 @@ class SpaService {
     let page = this.defaultPage;
     if (window.location.hash) {
       page = window.location.hash.slice(1);
-      console.log(page)
-
     }
 
     if (page === 'admin' || page === 'login') {
@@ -90,9 +88,6 @@ class SpaService {
       document.querySelector('#login').style.display = 'none'; // remove aside
 
 
-      // authService.logout()
-      console.log('not admin')
-
       // Only show loader the first time on each page
       if (this.visitedPages.indexOf(page) === -1) {
         loaderService.show(true)
@@ -103,7 +98,6 @@ class SpaService {
 
         this.navigateTo('');
       } else {
-        // document.querySelector('.tabbar').style.display = 'block'; // remove aside
         this.showPage(page);
 
         //
@@ -118,8 +112,6 @@ class SpaService {
           }
 
           if (this.navCounter === 0) { // create markers the first time, the map is visited
-            // mapInfoService.createMarkers();
-
             stageCircles.template();
             this.navCounter++
           }
@@ -149,7 +141,6 @@ class SpaService {
           }
           loaderService.show(false) // turn off the loader
           if (this.counter === 0) { // create markers the first time, the map is visited
-            // mapInfoService.createMarkers();
             fetchService.fetchMarkers()
             stageCircles.template();
             this.counter++
@@ -157,18 +148,6 @@ class SpaService {
         }
       }
     }
-
-  }
-
-  // show and hide tabbar
-  hideTabbar(hide) {
-    // console.log(hide)
-    // let tabbar = document.querySelector('#tabbar');
-    // if (hide) {
-    //   tabbar.classList.add("hide");
-    // } else {
-    //   tabbar.classList.remove("hide");
-    // }
   }
 
   reloadPage() {

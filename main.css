@@ -1659,7 +1659,7 @@ form button {
     border-radius: 25px;
     color: var(--text-color-light);
     background-color: var(--camino-green);
-    width: 100%;
+    width: 50%;
     max-width: 350px;
     margin-top: 3%;
   }

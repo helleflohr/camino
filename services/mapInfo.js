@@ -19,11 +19,9 @@ class MapInfoService {
         // The toner style
         let toner = new L.StamenTileLayer("toner");
 
-
         map.addLayer(OpenStreetMap_HOT); // Add HOT to the map as default
 
         this.tilesAndControles(); // Add the map controles
-
 
         let iconClass = L.Icon.extend({ // Icon standard
             options: {
@@ -38,8 +36,8 @@ class MapInfoService {
 
         // --------------- Set the icons for the differet categories ---------------
         let Seng = new iconClass({
-            iconUrl: 'images/ikoner-map/Seng.svg'
-        }),
+                iconUrl: 'images/ikoner-map/Seng.svg'
+            }),
             Kirker = new iconClass({
                 iconUrl: 'images/ikoner-map/Kirker.svg'
             }),
@@ -199,8 +197,6 @@ class MapInfoService {
             manualMode: false,
             printModes: [L.control.browserPrint.mode.landscape("Landskab"), L.control.browserPrint.mode.auto("Auto", "B4"), L.control.browserPrint.mode.custom("Brugerdefineret")]
         }).addTo(map)
-
-        // https://github.com/Igor-Vladyka/leaflet.browser.print kig evt. her for at finde du af hvordan det kan fikses
 
     }
     // --------------- Printer function - End ---------------

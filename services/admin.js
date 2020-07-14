@@ -2,13 +2,7 @@ import firebaseService from '../services/firebase.js'
 import loaderService from "../services/loader.js"
 
 class AdminService {
-    constructor() {
-        // this.template();
-        // this._dataRef = firebaseService.getPostRef() // Global variable of collection "posts" in firebase
-        // this._posts = []; // global array
-        // this.read() // runs the function
-        // this.init()
-    }
+    constructor() {}
 
     init() {
         this.template();
@@ -32,7 +26,6 @@ class AdminService {
     }
 
     read() {
-
         this._dataRef.onSnapshot(snapshotData => { //each time the contents change, another call updates the document snapshot.
             this._posts = []; // this asures that the posts array is empty every time new posts is pushed to is
             snapshotData.forEach(doc => { // loop through snapshotData - like for of loop
@@ -82,14 +75,11 @@ class AdminService {
                 </section>
             `
             }
-
         }
-
         loaderService.show(false);
     };
 
     deletePost(id) {
-        console.log("You are trying to delete");
         let result = confirm("Er du sikker på at du vil slette?");
         if (result) {
             this._dataRef.doc(id).delete();
@@ -97,11 +87,9 @@ class AdminService {
     };
 
     approvePost(id) {
-        console.log("You are trying to approve");
         this._dataRef.doc(id).update({
             approved: true
         })
-
     };
 
 }

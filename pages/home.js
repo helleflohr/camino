@@ -6,15 +6,12 @@ export default class HomePage {
   constructor() {
     this.template();
     this.fetchDescription();
-    /* this.showLoader(); */
   }
 
   template() {
     document.getElementById('content').innerHTML += /*html*/ `
       <section id="home" class="page ">
-       <!-- <header class="topbar">
-          <h2>Home</h2>
-        </header> -->
+
           <!-- frontpage image and info bar -->
   <section id="frontpageImage" >
   <div id="navbar"> 
@@ -24,15 +21,15 @@ export default class HomePage {
     </ul>
     </div>
   <div id="frontpageLogoDiv">
-  <img id="frontpageLogo" src="images/cfhLogo.png">
+    <img id="frontpageLogo" src="images/cfhLogo.png">
   </div>
-<div id="frontpageTextDiv">
-  <h1> Camino Frøs Herred</h1>
-  <h2>Åbner sig for natur, kultur og fordybelse</h2>
+  <div id="frontpageTextDiv">
+    <h1> Camino Frøs Herred</h1>
+    <h2>Åbner sig for natur, kultur og fordybelse</h2>
   </div>
   <div  class="socialMedia">
-  <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
-  <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
+    <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
+    <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
   </div>
   
   </section>
@@ -114,7 +111,6 @@ export default class HomePage {
 
     for (let post of posts) {
 
-      // console.log(post);
       document.querySelector("#grid-posts").innerHTML += `
     
     <article id="stage${post.acf.stageNumber}" class="grid-item" onmouseover="goTo(${post.acf.stageNumber})" onmouseout="goFrom(${post.acf.stageNumber})">
@@ -196,7 +192,6 @@ export default class HomePage {
         
       </section>
     </article> `
-      // console.log(post.acf, post.acf.images)
     }
 
 

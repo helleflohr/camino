@@ -46,7 +46,6 @@ class ScrollService {
                     block: "start" //...else scroll to center
                 });
             }
-            console.log(number)
         }
     }
 
@@ -89,7 +88,6 @@ class ScrollService {
         let numberOfStages = mapService.descriptions.length
         this.chosenNumber = number;
 
-
         //.......................... Style distance, line on map and buttons .................................
 
         for (let i = 1; i < (numberOfStages + 1); i++) { // Run thrug all stages
@@ -109,18 +107,14 @@ class ScrollService {
         let distance = stage.querySelector('h4') // The choosen stage distance
         distance.style.color = 'var(--camino-yellow)' // Highlight the distance
 
-
-
         // Adds the class "selected" to the button wich has been selected
         let allButtons = document.getElementsByClassName('navbtn');
         for (const button of allButtons) {
-            // console.log(button)
             if (button.value == number) {
                 button.classList.add("selected");
             } else {
                 button.classList.remove("selected");
             }
-
         }
 
         //.......................... Stage dropdown .................................
@@ -129,7 +123,6 @@ class ScrollService {
         for (const dropdown of allDropdowns) {
             dropdown.style.display = "none";
         }
-
 
         let dropdown = stage.getElementsByClassName('dropdown')[0];
         dropdown.style.display = 'block';
@@ -149,10 +142,6 @@ class ScrollService {
         }
 
 
-
-
-
-
         //.......................... Tab underliner .................................
         this.createFirstTabUnderline(number);
 
@@ -169,10 +158,7 @@ class ScrollService {
                     descriptionDiv.innerHTML = `${stage.content.rendered}`; // ...insert description from WordPress API
                 }
             }
-
         }
-
-
     }
 
     createFirstTabUnderline(number) {
@@ -180,27 +166,20 @@ class ScrollService {
             //.......................... Tab underliner .................................
             let stage = document.querySelector(`#stage${number}`); // The choosen stage
             let listItem = stage.getElementsByClassName('tabNav'); // Tab items
-            // console.log(listItem, number)
             this.trWidth = [];
             this.trMargin = [];
             for (const item of listItem) {
                 this.trWidth.push(item.offsetWidth) // Get the width of the tab items and push into array
                 this.trMargin.push(item.offsetLeft) // Get the postition of the tab items and push into array
-                console.log(item.offsetWidth, item.offsetLeft)
             }
 
-
             let underline = document.querySelector(`#hr${number}`); // The underliner
-            console.log(underline, this.trWidth)
 
             // Set the underliner width to the length of the first tab item
             // This value is set once for each stage on click
 
             underline.style.width = `${this.trWidth[0]}px`;
-
-
         }
-        // loaderService.show(false)
     }
 
 
@@ -219,8 +198,6 @@ class ScrollService {
 
         let chosenTab = document.querySelector(`#${tab}${number}`); // The choosen tab
         chosenTab.style.display = 'block'; // Show the choosen tab  
-
-
 
         //.......................... Underliner .................................
         let underline = document.querySelector(`#hr${number}`); // The line
@@ -249,7 +226,6 @@ class ScrollService {
         // Run the following codeblock the first time each stage is choosen
         if (this.numberImageCounter.indexOf(number) === -1) {
             this.numberImageCounter.push(number)
-
 
             let stage = document.querySelector(`#stage${number}`); // The stage container
             let imageContainer = stage.getElementsByClassName('tabImages')[0]; // The image container
