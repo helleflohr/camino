@@ -665,17 +665,13 @@ aside h3 {
 }
 
 .title-distance h4 {
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .title-distance h4,
 .start-end h5 {
   /* margin-top: 5%; */
   font-family: 'JosefinSans', Arial, sans-serif;
-}
-
-.title-distance h4 {
-  margin-top: 5%;
 }
 
 .start-end {
