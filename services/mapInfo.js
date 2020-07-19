@@ -36,8 +36,8 @@ class MapInfoService {
 
         // --------------- Set the icons for the differet categories ---------------
         let Seng = new iconClass({
-                iconUrl: 'images/ikoner-map/Seng.svg'
-            }),
+            iconUrl: 'images/ikoner-map/Seng.svg'
+        }),
             Kirker = new iconClass({
                 iconUrl: 'images/ikoner-map/Kirker.svg'
             }),
@@ -66,7 +66,7 @@ class MapInfoService {
                 iconUrl: 'images/ikoner-map/Forplejningsmuligheder.svg'
             }),
             Seværdigheder = new iconClass({
-                iconUrl: 'images/ikoner-map/Seværdigheder.svg'
+                iconUrl: 'images/ikoner-map/Sevaerdigheder.svg'
             }),
             Genforeningssten = new iconClass({
                 iconUrl: 'images/ikoner-map/Genforeningssten.svg'
@@ -75,7 +75,7 @@ class MapInfoService {
                 iconUrl: 'images/ikoner-map/Legepladser.svg'
             }),
             Indkøbsmuligheder = new iconClass({
-                iconUrl: 'images/ikoner-map/Indkøbsmuligheder.svg'
+                iconUrl: 'images/ikoner-map/Indkoebsmuligheder.svg'
             }),
             Parkering = new iconClass({
                 iconUrl: 'images/ikoner-map/Parkering.svg'
@@ -163,7 +163,13 @@ class MapInfoService {
                     imageIcons += `<img src='images/ikoner-map/${stay}.svg' />` // and add an icon for each
                 }
                 checkboxLine = `<p>${icon}</p><div>${imageIcons}</div>`; // Categoryname and icon
-            } else {
+            } else if (icon == "Seværdigheder") { // if the category is attractions
+                checkboxLine = `<p>${icon}</p><div><img src='images/ikoner-map/Sevaerdigheder.svg' /></div>`; // Categoryname and icon
+
+            } else if (icon == "Indkøbsmuligheder") { // if the category is shopping
+                checkboxLine = `<p>${icon}</p><div><img src='images/ikoner-map/Indkoebsmuligheder.svg' /></div>`; // Categoryname and icon
+            }
+            else {
                 checkboxLine = `<p>${icon}</p><div><img src='images/ikoner-map/${icon}.svg' /></div>`; // Categoryname and icon
             }
             overlayCategories[checkboxLine] = eval(name); // Add property (The checkboxline) and value (the matching array) and push it to overlayCategories
