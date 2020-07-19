@@ -271,7 +271,7 @@ hr {
   border: 2px solid var(--text-color-light);
   background-color: var(--text-color-light);
   color: var(--text-color-dark);
-  margin: 5% auto;
+  margin: 0 auto;
   font-family: 'abolition-soft';
   font-size: 1em;
   cursor: pointer;

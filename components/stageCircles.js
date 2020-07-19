@@ -20,15 +20,13 @@ class StageCircles {
             <input type="button" class="navbtn btn" value="${i}" onmouseover="goTo(this.value)" onmouseout="goFrom(this.value)"
             onclick="chosen(this.value); scrollToStage(this.value)">
           <span></span>
-          <span></span>
-          <span></span>
           </div>
             `
 
         }
         let theCircleDiv = document.querySelector('.navigationEtape div');
-
-        theCircleDiv.style.height = `75%`
+        theCircleDiv.style.marginTop = "1em"
+        theCircleDiv.style.height = `80%`
 
         theCircleDiv.innerHTML = circles;
 
@@ -39,15 +37,15 @@ class StageCircles {
             circle.style.height = `${height}%`;
             // circle.style.padding = '5% 0 0';
 
-            circle.querySelector('.navbtn').style.height = '80%';
+            circle.querySelector('.navbtn').style.height = '70%';
             let circleHeight = circle.querySelector('.navbtn').clientHeight;
             circle.querySelector('.navbtn').style.width = `${circleHeight}px`;
-            circle.querySelector('span').style.marginTop = '5%'
+            // circle.querySelector('span').style.marginTop = '5%'
             let spans = circle.querySelectorAll('span')
             for (const span of spans) {
-                span.style.height = '4%';
+                span.style.height = '15%';
                 span.style.width = '2%';
-                span.style.margin = '.5% auto'
+                span.style.margin = '2.5% auto 0'
             }
 
 
@@ -56,7 +54,7 @@ class StageCircles {
         //Remove the spans after the last circle
         let numberOfSpans = theCircleDiv.querySelectorAll('span').length
         for (let i = 1; i < numberOfSpans + 1; i++) {
-            if (i === numberOfSpans || i === numberOfSpans - 1 || i === numberOfSpans - 2) {
+            if (i === numberOfSpans) {
                 theCircleDiv.querySelectorAll('span')[i - 1].style.display = 'none'
             }
         }
