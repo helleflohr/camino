@@ -82,7 +82,7 @@ export default class HomePage {
   //Johanne
   fetchDescription() {
 
-    fetch("http://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=2&per_page=15")
+    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
       .then((response) => {
         return response.json();
       })
@@ -149,7 +149,7 @@ export default class HomePage {
           </div>
           <div class="descriptionDiv">
          </div>
-          <a class="gpx" href="geojson/Camino-Frøs-Herred-${post.acf.stageNumber}.gpx" download>Download GPX-fil (${post.acf.stageNumber})</a>
+          <a class="gpx" href="geojson/Camino-Fros-Herred-${post.acf.stageNumber}.gpx" download>Download GPX-fil (${post.acf.stageNumber})</a>
         </div>
 
         <!--------- images content ------->
