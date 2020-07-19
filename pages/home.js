@@ -82,7 +82,7 @@ export default class HomePage {
   //Johanne
   fetchDescription() {
 
-    fetch("http://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=2&per_page=15")
+    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
       .then((response) => {
         return response.json();
       })
