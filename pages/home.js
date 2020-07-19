@@ -17,7 +17,6 @@ export default class HomePage {
   <div id="navbar"> 
   <ul>
       <li><a href="https://billund.dk/politik/landdistrikter/lag-midler/" target="_blank">LAG Vejen-Billund</a></li>
-      <li><a href="">Shop</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">

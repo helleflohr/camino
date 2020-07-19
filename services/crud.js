@@ -128,6 +128,7 @@ class CrudService {
       let nameInput = stageInput.querySelector('.formName');
       let textInput = stageInput.querySelector('.formText');
       let imageInput = stageInput.querySelector('.imagePreview');
+      let close = stageInput.querySelector('.close');
 
       //object with properties
       let newPost = {
@@ -145,7 +146,16 @@ class CrudService {
         stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
       });
       alert("Du har nu oprettet et opslag som afventer godkendelse hos administrator");
+      nameInput.value = "";
+      textInput.value = "";
+      imageInput.src = "";
+      // stageInput.reset();
+
+
+      this.modalClose(close)
     }
+
+
 
   };
 

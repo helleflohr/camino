@@ -26,6 +26,7 @@ html {
   height: 100%;
   text-align: left;
   width: 100%;
+  background-color: var(--camino-blue);
 }
 
 body {
@@ -130,7 +131,7 @@ aside {
 #content {
   width: 100vw;
   height: calc(var(--vh, 1vh) * 90);
-  overflow: auto;
+  overflow: visible;
   background-color: var(--camino-blue);
 }
 
@@ -361,7 +362,7 @@ hr {
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
-  margin-bottom: 10%;
+  margin-bottom: calc(var(--vh, 1vh) * 10);
 }
 
 #frontpageSection div {
@@ -388,7 +389,7 @@ h2 {
 
 
 #frontpageSection .descriptionArrow {
-  right: 0;
+  right: 1%;
   top: 7%;
   transform: rotate(90deg) scaleY(-1);
 }
@@ -1087,21 +1088,31 @@ form button {
 
 #navbar ul {
   list-style-type: none;
+  padding: 0 5% 0 0;
+  margin-top: 0.5em;
 }
 
 #navbar li {
   float: right;
-  padding: 5% 5% 0 0;
+ 
   font-size: 0.9em;
+
+  
+
 }
 
-#navbar a {
-  display: block;
-  color: var(--camino-blue);
+#navbar li a {
+  /* display: block; */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: .2em;
+
+  /* text-align: center; */
+  color: var(--text-color-light);
 }
 
 #navbar li a:hover {
   text-decoration: underline;
+  text-decoration-color: var(--camino-yellow);
 }
 
 .logout h4 {
@@ -1156,7 +1167,8 @@ form button {
 /* -------- Approve page ---------*/
 #admin {
   text-align: center;
-  margin: 0 2em;
+  padding: 0 2em;
+  background-color: var(--camino-blue);
 }
 
 #approve h2 {
@@ -1297,23 +1309,22 @@ form button {
 
   #navbar ul {
     list-style-type: none;
+    padding: 2% 2% 0 0;
   }
 
   #navbar li {
     float: right;
     margin-right: 2%;
-    padding: 2% 2% 0 0;
+
     font-size: 1.2em;
   }
 
-  #navbar a {
-    display: block;
+  #navbar li a {
+    /* display: block; */
+    padding: .5em;
     color: var(--text-color-light);
   }
 
-  #navbar li a:hover {
-    text-decoration: underline;
-  }
 
   /* -------------------- */
 
@@ -1422,7 +1433,7 @@ form button {
   #frontpageLogoDiv {
     width: 30%;
     margin-left: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
   }
 
   #frontpageLogo {
@@ -1431,7 +1442,7 @@ form button {
 
   #frontpageTextDiv {
     width: 60%;
-    margin: 23% 0 0 2.5%;
+    margin: 18% 0 0 2.5%;
     text-align: left;
   }
 
@@ -1446,7 +1457,7 @@ form button {
   #content {
     width: 90vw;
     height: calc(var(--vh, 1vh) * 100);
-    overflow: auto;
+    overflow: visible;
   }
 
   #frontpageSection {

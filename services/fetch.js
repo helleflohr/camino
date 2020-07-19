@@ -11,7 +11,8 @@ class FetchService {
 
     //.......................... Fetch the descriptions from wordpress api .................................
     async fetchDescription() {
-        let response = await fetch("https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
+        // let response = await fetch("https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
+        let response = await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
         this.descriptions = await response.json();
     }
 
@@ -27,7 +28,9 @@ class FetchService {
     //.......................... Fetch the markers .................................
     async fetchMarkers() {
         loaderService.show(true) // show the loader
-        await fetch("https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=3&per_page=500")
+        // await fetch("https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=3&per_page=500")
+
+        await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=3&per_page=500")
             .then(function (response) {
                 return response.json();
             })
@@ -39,7 +42,8 @@ class FetchService {
 
     //.......................... Fetch which markers should be on map from start .................................
     async fetchStartMarkers() {
-        await fetch("https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=9")
+        // https://dittejohannejustesen.dk/wordpress/wordpress-cfh/wp-json/wp/v2/posts?_embed&categories=9
+        await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=4")
             .then(function (response) {
                 return response.json();
             })
