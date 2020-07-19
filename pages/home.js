@@ -149,7 +149,7 @@ export default class HomePage {
           </div>
           <div class="descriptionDiv">
          </div>
-          <a class="gpx" href="geojson/Camino-Frøs-Herred-${post.acf.stageNumber}.gpx" download>Download GPX-fil (${post.acf.stageNumber})</a>
+          <a class="gpx" href="geojson/Camino-Fros-Herred-${post.acf.stageNumber}.gpx" download>Download GPX-fil (${post.acf.stageNumber})</a>
         </div>
 
         <!--------- images content ------->

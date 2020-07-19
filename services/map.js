@@ -17,7 +17,7 @@ class MapService {
     let numberOfStages = this.descriptions.length // Get save the number of stages
 
     for (let i = 1; i < (numberOfStages + 1); i++) { // for each stage...
-      fetch(`geojson/Camino-Frøs-Herred-${i}.gpx`) // get the matching gpx-file
+      fetch(`geojson/Camino-Fros-Herred-${i}.gpx`) // get the matching gpx-file
         .then(function (response) {
           return response.text();
         })
