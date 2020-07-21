@@ -110,7 +110,11 @@ export default class HomePage {
 
     for (let post of posts) {
 
-      document.querySelector("#grid-posts").innerHTML += `
+
+
+
+
+      document.querySelector("#grid-posts").innerHTML += /*html*/`
     
     <article id="stage${post.acf.stageNumber}" class="grid-item" onmouseover="goTo(${post.acf.stageNumber})" onmouseout="goFrom(${post.acf.stageNumber})">
 
@@ -166,33 +170,39 @@ export default class HomePage {
           </article>
 
           <div>
-          <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
+            <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
           </div>
 
-        <section id="commentsModal${post.acf.stageNumber}" class="modal">
-          <div class="modal-content">
-          <span class="close" onclick="modalClose(this)">&times;</span>
+
+         
+          <section id="commentsModal${post.acf.stageNumber}" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="modalClose(this)">&times;</span>
           
-      <form class="postForm stage-${post.acf.stageNumber}" name="postForm">
-    <h2 class="h2-etape" title="${post.acf.stageNumber}">Opret et opslag for etape: ${post.acf.stageNumber}</h2>
-    <input type="text" class="formName" name="fname" placeholder="Dit navn" required>
-    <textarea rows="10" cols="50" name="comment" form="usrform" class="formText" onkeyup="textCountDown(this, ${post.acf.stageNumber})" placeholder="Skriv din beretning" minlenght="1" maxlength="150" required></textarea>
-    <p value="0" class="demo-text"> Antal tegn: 0/150 </p>
-    <input type="file" class="none imgChoose " accept="image/*" onchange="previewImage(this.files[0], ${post.acf.stageNumber})"> <!-- skjult via styling -->
-    <button class="secondary" type="button" name="button" onclick="triggerChooseImg(${post.acf.stageNumber})">Vælg dit billede</button>
-    <div class="div-image-preview">
-    <img src="" class="image-preview imagePreview">
-  </div>
-    <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
-  </form>
-  </div>
-      </section>
+              <form class="postForm stage-${post.acf.stageNumber}" name="postForm">
+                <h2 class="h2-etape" title="${post.acf.stageNumber}">Opret et opslag for etape: ${post.acf.stageNumber}</h2>
+                <input type="text" class="formName" name="fname" placeholder="Dit navn" required>
+                <textarea rows="10" cols="50" name="comment" form="usrform" class="formText" onkeyup="textCountDown(this, ${post.acf.stageNumber})" placeholder="Skriv din beretning" minlenght="1" maxlength="150" required></textarea>
+                <p value="0" class="demo-text"> Antal tegn: 0/150 </p>
+                <input type="file" class="none imgChoose " accept="image/*" onchange="previewImage(this.files[0], ${post.acf.stageNumber})"> <!-- skjult via styling -->
+                <button class="secondary" type="button" name="button" onclick="triggerChooseImg(${post.acf.stageNumber})">Vælg dit billede</button>
+                <div class="div-image-preview">
+                  <img src="" class="image-preview imagePreview">
+                </div>
+                <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
+              </form>
+            </div>
+          </section>
+       
         </div>
         
       </section>
-    </article> `
-    }
+    </article> `;
 
+
+
+
+    }
 
   };
 
