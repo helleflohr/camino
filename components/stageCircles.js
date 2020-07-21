@@ -26,7 +26,7 @@ class StageCircles {
         }
         let theCircleDiv = document.querySelector('.navigationEtape div');
         theCircleDiv.style.marginTop = "1em"
-        theCircleDiv.style.height = `80%`
+        theCircleDiv.style.height = `75%`
 
         theCircleDiv.innerHTML = circles;
 
