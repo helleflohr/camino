@@ -364,12 +364,6 @@ hr {
   margin-bottom: calc(var(--vh, 1vh) * 25);
 }
 
-@media only screen and (min-width: 414px) {
-  #frontpageSection {
-    margin-bottom: calc(var(--vh, 1vh) * 13);
-  }
-}
-
 #frontpageSection div {
   width: 90%;
   margin: 0 auto 1em;
@@ -937,6 +931,11 @@ form button {
 }
 
 /* ---------- leaflet controle styling ---------- */
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 35px;
+}
+
 .leaflet-container .leaflet-control-attribution {
   font-size: .9%;
 }
@@ -1168,7 +1167,6 @@ form button {
   color: var(--camino-yellow);
 }
 
-
 @media only screen and (min-width: 414px) {
 
   .tabbar,
@@ -1180,6 +1178,8 @@ form button {
     margin: 0%;
   }
 }
+
+
 
 /* -------- Approve page ---------*/
 #admin {
