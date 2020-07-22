@@ -932,6 +932,11 @@ form button {
 }
 
 /* ---------- leaflet controle styling ---------- */
+
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 35px;
+	}
+
 .leaflet-container .leaflet-control-attribution {
   font-size: .9%;
 }
