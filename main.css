@@ -362,7 +362,13 @@ hr {
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
-  margin-bottom: calc(var(--vh, 1vh) * 10);
+  margin-bottom: calc(var(--vh, 1vh) * 25);
+}
+
+@media only screen and (min-width: 375px) {
+#frontpageSection {
+  margin-bottom: calc(var(--vh, 1vh) * 13);
+}
 }
 
 #frontpageSection div {
@@ -1116,6 +1122,7 @@ form button {
 }
 
 /* ---------- tabbar styling ---------- */
+
 .tabbar,
 .logout {
   background-color: var(--camino-green);
@@ -1128,6 +1135,7 @@ form button {
   z-index: 99;
   display: flex;
   justify-content: space-between;
+  padding: 0 0 7% 0;
 }
 
 .logout {
@@ -1145,6 +1153,7 @@ form button {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   width: 33vw;
+  margin: 0 0 -7% 0;
 }
 
 .tabbar img {
@@ -1158,6 +1167,17 @@ form button {
 /* Add a color to the active/current link */
 .tabbar a.active {
   color: var(--camino-yellow);
+}
+
+@media only screen and (min-width: 375px) {
+  .tabbar,
+.logout {
+  padding: 0%;
+}
+
+.tabbar a {
+  margin: 0%;
+}
 }
 
 /* -------- Approve page ---------*/
