@@ -364,7 +364,7 @@ hr {
   margin-bottom: calc(var(--vh, 1vh) * 25);
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 414px) {
   #frontpageSection {
     margin-bottom: calc(var(--vh, 1vh) * 13);
   }
@@ -1168,7 +1168,8 @@ form button {
   color: var(--camino-yellow);
 }
 
-@media only screen and (min-width: 375px) {
+
+@media only screen and (min-width: 414px) {
 
   .tabbar,
   .logout {
