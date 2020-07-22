@@ -152,7 +152,7 @@ aside {
   color: var(--camino-blue);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .7em;
+  font-size: .6em;
   margin-left: 0;
 }
 
@@ -1265,7 +1265,7 @@ form button {
 
 
   .tabNav {
-    font-size: 1em;
+    font-size: 0.7em;
   }
 
   .postSection {
@@ -1415,7 +1415,7 @@ form button {
   }
 
   .tabNav {
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 1000;
   }
 
