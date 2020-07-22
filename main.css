@@ -365,12 +365,6 @@ hr {
   margin-bottom: calc(var(--vh, 1vh) * 25);
 }
 
-@media only screen and (min-width: 414px) {
-#frontpageSection {
-  margin-bottom: calc(var(--vh, 1vh) * 13);
-}
-}
-
 #frontpageSection div {
   width: 90%;
   margin: 0 auto 1em;
@@ -1167,17 +1161,6 @@ form button {
 /* Add a color to the active/current link */
 .tabbar a.active {
   color: var(--camino-yellow);
-}
-
-@media only screen and (min-width: 414px) {
-  .tabbar,
-.logout {
-  padding: 0%;
-}
-
-.tabbar a {
-  margin: 0%;
-}
 }
 
 /* -------- Approve page ---------*/
