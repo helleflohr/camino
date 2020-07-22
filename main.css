@@ -300,9 +300,8 @@ hr {
 
 .navigationEtape span {
   display: block;
-  width: .1em;
+  width: .05em;
   height: .1em;
-  border-radius: 50%;
   background-color: var(--text-color-light);
   margin: .1em auto;
 }
@@ -366,9 +365,9 @@ hr {
 }
 
 @media only screen and (min-width: 375px) {
-#frontpageSection {
-  margin-bottom: calc(var(--vh, 1vh) * 13);
-}
+  #frontpageSection {
+    margin-bottom: calc(var(--vh, 1vh) * 13);
+  }
 }
 
 #frontpageSection div {
@@ -1170,14 +1169,15 @@ form button {
 }
 
 @media only screen and (min-width: 375px) {
-  .tabbar,
-.logout {
-  padding: 0%;
-}
 
-.tabbar a {
-  margin: 0%;
-}
+  .tabbar,
+  .logout {
+    padding: 0%;
+  }
+
+  .tabbar a {
+    margin: 0%;
+  }
 }
 
 /* -------- Approve page ---------*/
@@ -1502,7 +1502,7 @@ form button {
   }
 
   #frontpageSection img {
-   width: 7%;
+    width: 7%;
     margin-top: 4%;
   }
 
