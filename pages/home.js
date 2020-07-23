@@ -61,7 +61,7 @@ export default class HomePage {
  
       <h2 onclick="scrollToElement('stage1')">Rutebeskrivelser</h2>
       <p>Caminoen er inddelt i 11 etaper, som giver muligheden for at gå noget af ruten og derved træne op til at kunne
-        gå hele Caminoen en dag. For hver etape er der rutebeskrivelser som udførligt vejleder dig gennem turen. Der er
+        gå hele den spanske Camino en dag. For hver etape er der rutebeskrivelser som udførligt vejleder dig gennem turen. Der er
         også billeder og udtalelser fra andre vandrere.</p>
     </div>
   </section>
