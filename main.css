@@ -362,7 +362,8 @@ hr {
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
-  margin-bottom: calc(var(--vh, 1vh) * 25);
+  /* margin-bottom: calc(var(--vh, 1vh) * 25); */
+  margin-bottom: 50%;
 }
 
 #frontpageSection div {
@@ -389,20 +390,20 @@ h2 {
 
 
 #frontpageSection .descriptionArrow {
-  right: 1%;
+  right: -0.5%;
   top: 7%;
   transform: rotate(90deg) scaleY(-1);
 }
 
 #frontpageSection .mapArrow {
-  left: 32%;
+  left: 31%;
   top: 7%;
   transform: rotate(90deg);
 }
 
 #frontpageSection .generalArrow {
   left: 17%;
-  top: 0;
+  top: -5%;
   transform: rotate(-60deg);
 }
 
@@ -415,12 +416,12 @@ h2 {
   overflow-x: hidden;
 }
 
-
 .maparea {
   position: relative;
   height: 100%;
   overflow-x: hidden;
   width: 87%;
+  margin-bottom: 40%;
 }
 
 #infoBox {
@@ -1021,8 +1022,8 @@ form button {
   width: 49%;
 }
 
-.leaflet-popup-content {
-  width: 30%;
+.leaflet-popup-content h4 {
+  font-size: 1.7em;
 }
 
 .leaflet-popup-content p {
@@ -1042,6 +1043,10 @@ form button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
+}
+
+.leaflet-popup-content { 
+  width:auto !important; 
 }
 
 /* ------- Cluster ------*/
@@ -1127,14 +1132,13 @@ form button {
   background-color: var(--camino-green);
   width: 100vw;
   position: fixed;
-  height: calc(var(--vh, 1vh) * 10);
+  height: calc(var(--vh, 1vh) * 12.5);
   bottom: 0;
   left: 0;
   /* right: 0; */
   z-index: 99;
   display: flex;
   justify-content: space-between;
-  padding: 0 0 7% 0;
 }
 
 .logout {
@@ -1271,7 +1275,6 @@ form button {
 
 @media only screen and (min-width: 500px) {
 
-
   .tabNav {
     font-size: 0.7em;
   }
@@ -1279,6 +1282,19 @@ form button {
   .postSection {
     width: 50%;
   }
+
+  .maparea {
+    margin-bottom: 10%;
+  }
+
+  .tabbar {
+    height: calc(var(--vh, 1vh) * 8)
+  }
+
+  #frontpageSection {
+    margin-bottom: 15%;
+  }
+
 }
 
 @media only screen and (min-width: 720px) {
@@ -1359,6 +1375,7 @@ form button {
   .maparea {
     height: 100vh;
     width: 100%;
+    margin-bottom: 0%;
   }
 
   #grid-posts {
