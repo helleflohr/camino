@@ -362,7 +362,7 @@ hr {
   text-align: left;
   background-color: var(--camino-blue);
   /* margin-bottom: calc(var(--vh, 1vh) * 25); */
-  margin-bottom: 50%;
+  margin-bottom: 30%;
 }
 
 #frontpageSection div {
@@ -1044,8 +1044,8 @@ form button {
   background-size: 50%;
 }
 
-.leaflet-popup-content { 
-  width:auto !important; 
+.leaflet-popup-content {
+  width: auto !important;
 }
 
 /* ------- Cluster ------*/

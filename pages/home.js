@@ -16,7 +16,7 @@ export default class HomePage {
   <section id="frontpageImage" >
   <div id="navbar"> 
   <ul>
-      <li><a href="https://www.livogland.dk/lokale-aktionsgrupper?fbclid=IwAR1AcDe7tTu-cmGc5AOb0KwyfRYoQz6z1A4cCGwFfDkIKJ1MpSuhuajLL8Y" target="_blank">LAG Vejen-Billund</a></li>
+      <li><a href="https://www.livogland.dk/lokale-aktionsgrupper" target="_blank">LAG Vejen-Billund</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">
