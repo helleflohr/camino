@@ -1,6 +1,7 @@
 // import your hideAllPages
 import HomePage from "./pages/home.js";
 import LoginPage from "./pages/login.js";
+import AboutPage from "./pages/about.js";
 
 
 // import your services
@@ -20,9 +21,11 @@ import stageCircles from "./components/stageCircles.js";
 
 
 
+
 // Declare and init pages
 let homePage = new HomePage();
 let loginPage = new LoginPage();
+let aboutPage = new AboutPage();
 
 stageCircles.template();
 
@@ -63,6 +66,7 @@ window.reloadPage = () => spaService.reloadPage();
 window.deletePost = (postId) => adminService.deletePost(postId);
 window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
+window.appendWpPosts = () => aboutPage.appendWpPosts();
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

@@ -2,6 +2,7 @@ import fetchService from "./../services/fetch.js"
 import crudService from "./../services/crud.js"
 import slideService from "./../services/slide.js"
 import loaderService from "./../services/loader.js"
+import aboutPage from "./about.js"
 export default class HomePage {
   constructor() {
     this.template();
@@ -16,7 +17,9 @@ export default class HomePage {
   <section id="frontpageImage" >
   <div id="navbar"> 
   <ul>
-      <li><a href="https://www.livogland.dk/lokale-aktionsgrupper" target="_blank">LAG Vejen-Billund</a></li>
+      <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
+      <li><a href="#about">Merchendice</a></li>
+      <li><a href="#about">Info</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">
@@ -29,6 +32,7 @@ export default class HomePage {
   <div  class="socialMedia">
     <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
     <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
+    <a href="https://www.livogland.dk/lokale-aktionsgrupper"><img id="lag" src="images/LAG_logo_2.png"></a>
   </div>
   
   </section>

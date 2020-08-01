@@ -350,12 +350,22 @@ hr {
 }
 
 .socialMedia {
-  margin: 0 0 2% 2%;
+  /* margin: 0 0 2% 2%; */
+  margin-left: auto;
+  margin-right: 1%;
+  padding: 1em;
+
 }
 
 .socialMedia img {
   width: 2em;
   height: 2em;
+}
+
+#lag {
+  width: auto;
+  height: 2em;
+
 }
 
 #frontpageSection {
@@ -402,7 +412,7 @@ h2 {
 
 #frontpageSection .generalArrow {
   left: 17%;
-  top: -5%;
+  top: -6%;
   transform: rotate(-60deg);
 }
 
@@ -1099,11 +1109,8 @@ form button {
 
 #navbar li {
   float: right;
-
   font-size: 0.9em;
-
-
-
+  margin: 1em;
 }
 
 #navbar li a {
