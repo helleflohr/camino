@@ -202,19 +202,19 @@ export default class HomePage {
 
 
 
+
+
+  };
+
+
+  //Johanne
+  // gets the featured image url
+  getFeaturedImageUrl(post) {
+    let imageUrl = "";
+    if (post._embedded['wp:featuredmedia']) {
+      imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return imageUrl;
   }
-
-};
-
-
-//Johanne
-// gets the featured image url
-getFeaturedImageUrl(post) {
-  let imageUrl = "";
-  if (post._embedded['wp:featuredmedia']) {
-    imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-  }
-  return imageUrl;
-}
 
 }
