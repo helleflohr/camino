@@ -16,7 +16,7 @@ export default class HomePage {
   <section id="frontpageImage" >
   <div id="navbar"> 
   <ul>
-      <li><a href="https://billund.dk/politik/landdistrikter/lag-midler/" target="_blank">LAG Vejen-Billund</a></li>
+      <li><a href="https://www.livogland.dk/lokale-aktionsgrupper?fbclid=IwAR1AcDe7tTu-cmGc5AOb0KwyfRYoQz6z1A4cCGwFfDkIKJ1MpSuhuajLL8Y" target="_blank">LAG Vejen-Billund</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">
@@ -61,7 +61,7 @@ export default class HomePage {
  
       <h2 onclick="scrollToElement('stage1')">Rutebeskrivelser</h2>
       <p>Caminoen er inddelt i 11 etaper, som giver muligheden for at gå noget af ruten og derved træne op til at kunne
-        gå hele Caminoen en dag. For hver etape er der rutebeskrivelser som udførligt vejleder dig gennem turen. Der er
+        gå hele den spanske Camino en dag. For hver etape er der rutebeskrivelser som udførligt vejleder dig gennem turen. Der er
         også billeder og udtalelser fra andre vandrere.</p>
     </div>
   </section>
@@ -173,48 +173,48 @@ export default class HomePage {
             <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
           </div>
 
-
-         
-          <section id="commentsModal${post.acf.stageNumber}" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="modalClose(this)">&times;</span>
-          
-              <form class="postForm stage-${post.acf.stageNumber}" name="postForm">
-                <h2 class="h2-etape" title="${post.acf.stageNumber}">Opret et opslag for etape: ${post.acf.stageNumber}</h2>
-                <input type="text" class="formName" name="fname" placeholder="Dit navn" required>
-                <textarea rows="10" cols="50" name="comment" form="usrform" class="formText" onkeyup="textCountDown(this, ${post.acf.stageNumber})" placeholder="Skriv din beretning" minlenght="1" maxlength="150" required></textarea>
-                <p value="0" class="demo-text"> Antal tegn: 0/150 </p>
-                <input type="file" class="none imgChoose " accept="image/*" onchange="previewImage(this.files[0], ${post.acf.stageNumber})"> <!-- skjult via styling -->
-                <button class="secondary" type="button" name="button" onclick="triggerChooseImg(${post.acf.stageNumber})">Vælg dit billede</button>
-                <div class="div-image-preview">
-                  <img src="" class="image-preview imagePreview">
-                </div>
-                <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
-              </form>
-            </div>
-          </section>
-       
+        
         </div>
         
       </section>
-    </article> `;
+    </article> `
 
-
-
-
+      document.querySelector("#modalContent").innerHTML += `
+    <section id="commentsModal${post.acf.stageNumber}" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="modalClose(this)">&times;</span>
+        
+        <form class="postForm stage-${post.acf.stageNumber}" name="postForm">
+        <h2 class="h2-etape" title="${post.acf.stageNumber}">Opret et opslag for etape: ${post.acf.stageNumber}</h2>
+        <input type="text" class="formName" name="fname" placeholder="Dit navn" required>
+        <textarea rows="10" cols="50" name="comment" form="usrform" class="formText" onkeyup="textCountDown(this, ${post.acf.stageNumber})" placeholder="Skriv din beretning" minlenght="1" maxlength="150" required></textarea>
+        <p value="0" class="demo-text"> Antal tegn: 0/150 </p>
+        <input type="file" class="none imgChoose " accept="image/*" onchange="previewImage(this.files[0], ${post.acf.stageNumber})"> <!-- skjult via styling -->
+        <button class="secondary" type="button" name="button" onclick="triggerChooseImg(${post.acf.stageNumber})">Vælg dit billede</button>
+        <div class="div-image-preview">
+        <img src="" class="image-preview imagePreview">
+      </div>
+        <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
+      </form>
+      </div>
+          </section>`
     }
 
-  };
 
 
-  //Johanne
-  // gets the featured image url
-  getFeaturedImageUrl(post) {
-    let imageUrl = "";
-    if (post._embedded['wp:featuredmedia']) {
-      imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-    }
-    return imageUrl;
   }
+
+};
+
+
+//Johanne
+// gets the featured image url
+getFeaturedImageUrl(post) {
+  let imageUrl = "";
+  if (post._embedded['wp:featuredmedia']) {
+    imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+  }
+  return imageUrl;
+}
 
 }

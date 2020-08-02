@@ -152,7 +152,7 @@ aside {
   color: var(--camino-blue);
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .7em;
+  font-size: .6em;
   margin-left: 0;
 }
 
@@ -362,7 +362,7 @@ hr {
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
-  margin-bottom: calc(var(--vh, 1vh) * 10);
+  margin-bottom: calc(var(--vh, 1vh) * 15);
 }
 
 #frontpageSection div {
@@ -389,20 +389,20 @@ h2 {
 
 
 #frontpageSection .descriptionArrow {
-  right: 1%;
+  right: -0.5%;
   top: 7%;
   transform: rotate(90deg) scaleY(-1);
 }
 
 #frontpageSection .mapArrow {
-  left: 32%;
+  left: 31%;
   top: 7%;
   transform: rotate(90deg);
 }
 
 #frontpageSection .generalArrow {
   left: 17%;
-  top: 0;
+  top: -5%;
   transform: rotate(-60deg);
 }
 
@@ -414,7 +414,6 @@ h2 {
   z-index: 0;
   overflow-x: hidden;
 }
-
 
 .maparea {
   position: relative;
@@ -932,6 +931,11 @@ form button {
 }
 
 /* ---------- leaflet controle styling ---------- */
+
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 35px;
+	}
+
 .leaflet-container .leaflet-control-attribution {
   font-size: .9%;
 }
@@ -1016,8 +1020,8 @@ form button {
   width: 49%;
 }
 
-.leaflet-popup-content {
-  width: 30%;
+.leaflet-popup-content h4 {
+  font-size: 1.7em;
 }
 
 .leaflet-popup-content p {
@@ -1037,6 +1041,10 @@ form button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
+}
+
+.leaflet-popup-content { 
+  width:auto !important; 
 }
 
 /* ------- Cluster ------*/
@@ -1116,12 +1124,13 @@ form button {
 }
 
 /* ---------- tabbar styling ---------- */
+
 .tabbar,
 .logout {
   background-color: var(--camino-green);
   width: 100vw;
   position: fixed;
-  height: calc(var(--vh, 1vh) * 10);
+  height: calc(var(--vh, 1vh) * 12.5);
   bottom: 0;
   left: 0;
   /* right: 0; */
@@ -1145,6 +1154,7 @@ form button {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   width: 33vw;
+  margin: 0 0 -7% 0;
 }
 
 .tabbar img {
@@ -1263,14 +1273,21 @@ form button {
 
 @media only screen and (min-width: 500px) {
 
-
   .tabNav {
-    font-size: 1em;
+    font-size: 0.7em;
   }
 
   .postSection {
     width: 50%;
   }
+
+  .maparea {
+  }
+
+  .tabbar {
+    height: calc(var(--vh, 1vh) * 8)
+  }
+
 }
 
 @media only screen and (min-width: 720px) {
@@ -1415,7 +1432,7 @@ form button {
   }
 
   .tabNav {
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 1000;
   }
 
@@ -1478,11 +1495,11 @@ form button {
   #frontpageSection p {
     height: 16%;
     /* overflow-y: auto; */
-    margin-top: 5%;
+    margin-top: 9%;
   }
 
   #frontpageSection img {
-    height: 4%;
+   width: 7%;
     margin-top: 4%;
   }
 
