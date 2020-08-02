@@ -86,7 +86,7 @@ export default class HomePage {
   //Johanne
   fetchDescription() {
 
-    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
+    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=10&per_page=17")
       .then((response) => {
         return response.json();
       })

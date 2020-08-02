@@ -9,9 +9,9 @@ export default class MerchendicePage {
         <section id="merchendice" class="page">
         <div id="navbar"> 
         <ul>
-            <li><a href="#about">Om CFH</a></li>
-            <li><a href="#merchendice">Merchendice</a></li>
-            <li><a href="#info">Info</a></li>
+        <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
+        <li><a href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
+        <li><a href="#info">Info</a></li>
           </ul>
           </div>
       
