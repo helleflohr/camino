@@ -9,6 +9,7 @@ class FetchService {
         this.startMarkers = [];
         this.pagesFromWP = [];
         this.aboutPost = [];
+        this.merchendicePosts = [];
         this.fetchStartMarkers();
         // this.fetchAboutCFH();
     }
@@ -58,34 +59,8 @@ class FetchService {
     }
 
     //.......................... Fetch category About CFH from WP .................................
-    // async fetchAboutCFH() {
-    //     let response = await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=13")
-    //     this.aboutPost = response.json();
-
-
-    // }
-
-    // // Get the descriptions
     async getAboutPost() {
-        console.log("Jeg kører fra start");
 
-        //     if (this.aboutPost.length === 0) { // if the description array is empty ...
-        //         await this.fetchAboutCFH(); // fetch the descriptions
-        //     }
-        //     console.log("Fetch færdig");
-        //     loaderService.show(false) // turn off the loader
-        //     console.log("loader væk");
-
-        //     console.log(this.aboutPost);
-        //     return this.aboutPost // and return the descriptions
-        // }
-
-
-
-
-
-
-        // loaderService.show(true) // show the loader
 
         await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=13")
             .then(function (response) {
@@ -97,6 +72,23 @@ class FetchService {
                 console.log(json);
                 this.aboutPost = json;
                 console.log(this.aboutPost);
+            });
+        loaderService.show(false) // turn off the loader
+
+    }
+
+    //.......................... Fetch category Merchendice from WP .................................
+    async getMerchendicePosts() {
+
+
+        await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=15")
+            .then(function (response) {
+
+                return response.json();
+
+            })
+            .then((json) => {
+                this.merchendicePosts = json;
             });
         loaderService.show(false) // turn off the loader
 

@@ -2,6 +2,7 @@
 import HomePage from "./pages/home.js";
 import LoginPage from "./pages/login.js";
 import AboutPage from "./pages/about.js";
+import MerchendicePage from "./pages/merchendice.js"
 
 
 // import your services
@@ -26,6 +27,7 @@ import stageCircles from "./components/stageCircles.js";
 let homePage = new HomePage();
 let loginPage = new LoginPage();
 let aboutPage = new AboutPage();
+let merchendicePage = new MerchendicePage();
 
 stageCircles.template();
 
@@ -67,6 +69,7 @@ window.deletePost = (postId) => adminService.deletePost(postId);
 window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
 window.appendWpPosts = () => aboutPage.appendWpPosts();
+window.appendMerchendice = () => merchendicePage.appendMerchendice()
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

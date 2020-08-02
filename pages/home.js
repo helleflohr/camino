@@ -18,8 +18,8 @@ export default class HomePage {
   <div id="navbar"> 
   <ul>
       <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
-      <li><a href="#about">Merchendice</a></li>
-      <li><a href="#about">Info</a></li>
+      <li><a href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
+      <li><a href="#info">Info</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">

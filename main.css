@@ -416,6 +416,27 @@ h2 {
   transform: rotate(-60deg);
 }
 
+/* ---------- merchendice page styling ---------- */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 2em auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.merchendiceImage {
+  margin-right: 10%;
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* ---------- map ---------- */
 #mapid {
   height: 100%;
