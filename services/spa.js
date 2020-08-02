@@ -94,9 +94,29 @@ class SpaService {
       }
       this.visitedPages.push(page)
 
-      if (window.innerWidth > 1024) { // if desktop navigate to frontpage
 
-        this.navigateTo('');
+
+      if (window.innerWidth > 1024) { // if desktop navigate to frontpage
+        if (page === 'about' || page === 'merchendice' || page === 'info') {
+
+
+          this.hideAllPages();
+
+          // about.style.display = 'none';
+          // merchendice.style.display = 'none';
+          // info.style.display = 'none';
+
+          document.querySelector(`#${page}`).style.display = 'block';
+
+          console.log('extra page')
+          document.querySelector('#navbar').style.display = 'block';
+          let home = document.querySelector('#home');
+          let maparea = document.querySelector('.maparea');
+          home.style.display = 'none';
+          maparea.style.display = 'none';
+        } else {
+          this.navigateTo('');
+        }
       } else {
         this.showPage(page);
 
@@ -145,6 +165,7 @@ class SpaService {
             stageCircles.template();
             this.counter++
           }
+
         }
       }
     }

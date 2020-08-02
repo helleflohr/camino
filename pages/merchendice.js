@@ -7,13 +7,6 @@ export default class MerchendicePage {
     template() {
         document.getElementById('content').innerHTML += /*html*/ `
         <section id="merchendice" class="page">
-        <div id="navbar"> 
-        <ul>
-        <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
-        <li><a href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
-        <li><a href="#info">Info</a></li>
-          </ul>
-          </div>
       
        
         </section>
@@ -25,6 +18,7 @@ export default class MerchendicePage {
         await fetchService.getMerchendicePosts();
         let posts = fetchService.merchendicePosts;
         console.log(posts);
+        document.querySelector("#merchendice").innerHTML = '';
 
         for (let post of posts) {
 
