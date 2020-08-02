@@ -44,7 +44,7 @@ class StageCircles {
             let spans = circle.querySelectorAll('span')
             for (const span of spans) {
                 span.style.height = '15%';
-                span.style.width = '2%';
+                span.style.width = '1.5%';
                 span.style.margin = '2.5% auto 0'
             }
 

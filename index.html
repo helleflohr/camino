@@ -40,7 +40,7 @@
 
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <link rel="stylesheet" href="node_modules/leaflet.browser.print/dist/leaflet.browser.print.min.js" />
+  <script src="node_modules/leaflet.browser.print/dist/leaflet.browser.print.min.js"></script>
 
   <script src="node_modules/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
 
@@ -52,8 +52,9 @@
 
 </head>
 
+<!-- onresize="reloadPage()" -->
 
-<body class="app" onhashchange="pageChange()" onresize="reloadPage()">
+<body class="app" onhashchange="pageChange()">
 
   <!-- navigation -->
   <aside>

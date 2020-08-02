@@ -60,7 +60,7 @@ h3 {
 }
 
 h4 {
-  font-size: 2em;
+  font-size: 1.4em;
   letter-spacing: 0.1em;
 }
 
@@ -300,9 +300,8 @@ hr {
 
 .navigationEtape span {
   display: block;
-  width: .1em;
+  width: .05em;
   height: .1em;
-  border-radius: 50%;
   background-color: var(--text-color-light);
   margin: .1em auto;
 }
@@ -351,12 +350,22 @@ hr {
 }
 
 .socialMedia {
-  margin: 0 0 2% 2%;
+  /* margin: 0 0 2% 2%; */
+  margin-left: auto;
+  margin-right: 1%;
+  padding: 1em;
+
 }
 
 .socialMedia img {
   width: 2em;
   height: 2em;
+}
+
+#lag {
+  width: auto;
+  height: 2em;
+
 }
 
 #frontpageSection {
@@ -402,8 +411,29 @@ h2 {
 
 #frontpageSection .generalArrow {
   left: 17%;
-  top: -5%;
+  top: -6%;
   transform: rotate(-60deg);
+}
+
+/* ---------- merchendice page styling ---------- */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 2em auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.merchendiceImage {
+  margin-right: 10%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* ---------- map ---------- */
@@ -933,8 +963,8 @@ form button {
 /* ---------- leaflet controle styling ---------- */
 
 .leaflet-bottom .leaflet-control {
-	margin-bottom: 35px;
-	}
+  margin-bottom: 35px;
+}
 
 .leaflet-container .leaflet-control-attribution {
   font-size: .9%;
@@ -1043,8 +1073,8 @@ form button {
   background-size: 50%;
 }
 
-.leaflet-popup-content { 
-  width:auto !important; 
+.leaflet-popup-content {
+  width: auto !important;
 }
 
 /* ------- Cluster ------*/
@@ -1098,11 +1128,8 @@ form button {
 
 #navbar li {
   float: right;
-
   font-size: 0.9em;
-
-
-
+  margin: 1em;
 }
 
 #navbar li a {
@@ -1169,6 +1196,20 @@ form button {
 .tabbar a.active {
   color: var(--camino-yellow);
 }
+
+@media only screen and (min-width: 414px) {
+
+  .tabbar,
+  .logout {
+    padding: 0%;
+  }
+
+  .tabbar a {
+    margin: 0%;
+  }
+}
+
+
 
 /* -------- Approve page ---------*/
 #admin {
@@ -1281,8 +1322,7 @@ form button {
     width: 50%;
   }
 
-  .maparea {
-  }
+  .maparea {}
 
   .tabbar {
     height: calc(var(--vh, 1vh) * 8)
@@ -1499,7 +1539,7 @@ form button {
   }
 
   #frontpageSection img {
-   width: 7%;
+    width: 7%;
     margin-top: 4%;
   }
 

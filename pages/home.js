@@ -2,6 +2,7 @@ import fetchService from "./../services/fetch.js"
 import crudService from "./../services/crud.js"
 import slideService from "./../services/slide.js"
 import loaderService from "./../services/loader.js"
+import aboutPage from "./about.js"
 export default class HomePage {
   constructor() {
     this.template();
@@ -16,7 +17,9 @@ export default class HomePage {
   <section id="frontpageImage" >
   <div id="navbar"> 
   <ul>
-      <li><a href="https://www.livogland.dk/lokale-aktionsgrupper?fbclid=IwAR1AcDe7tTu-cmGc5AOb0KwyfRYoQz6z1A4cCGwFfDkIKJ1MpSuhuajLL8Y" target="_blank">LAG Vejen-Billund</a></li>
+      <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
+      <li><a href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
+      <li><a href="#info">Info</a></li>
     </ul>
     </div>
   <div id="frontpageLogoDiv">
@@ -29,6 +32,7 @@ export default class HomePage {
   <div  class="socialMedia">
     <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
     <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
+    <a href="https://www.livogland.dk/lokale-aktionsgrupper"><img id="lag" src="images/LAG_logo_2.png"></a>
   </div>
   
   </section>
@@ -110,11 +114,7 @@ export default class HomePage {
 
     for (let post of posts) {
 
-
-
-
-
-      document.querySelector("#grid-posts").innerHTML += /*html*/`
+      document.querySelector("#grid-posts").innerHTML += `
     
     <article id="stage${post.acf.stageNumber}" class="grid-item" onmouseover="goTo(${post.acf.stageNumber})" onmouseout="goFrom(${post.acf.stageNumber})">
 
@@ -170,7 +170,7 @@ export default class HomePage {
           </article>
 
           <div>
-            <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
+          <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
           </div>
 
         
@@ -199,9 +199,6 @@ export default class HomePage {
       </div>
           </section>`
     }
-
-
-
 
 
   };

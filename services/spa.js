@@ -151,8 +151,7 @@ class SpaService {
   }
 
   reloadPage() {
-    // window.location.reload();
-    console.log('resize');
+    window.location.reload();
   }
 }
 const spaService = new SpaService();
