@@ -7,6 +7,7 @@
   --text-color-light: #FFF1DD;
   --background-light: rgb(253, 249, 244);
   --text-color-dark: #002F38;
+  --box-shadow: 0 4px 8px 0 rgb(253, 249, 244, 0.2);
 }
 
 /* ---------- general styling ---------- */
@@ -415,10 +416,31 @@ h2 {
   transform: rotate(-60deg);
 }
 
+/* ---------- About CFH page styling ---------- */
+#generelt {
+  margin: 2em;
+  box-shadow: var(--box-shadow);
+  padding: .5em;
+}
+
+#generelt h2 {
+  text-align: center;
+}
+
+#generelt h4 {
+  color: var(--text-color-light);
+  margin-top: 2em;
+  line-height: 1.5em;
+}
+
+#generelt p {
+  margin-top: 1em;
+}
+
 /* ---------- merchendice page styling ---------- */
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
   max-width: 300px;
   margin: 2em auto;
   text-align: center;
