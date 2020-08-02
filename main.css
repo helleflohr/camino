@@ -1116,8 +1116,11 @@ form button {
 }
 
 #navbar {
+  position: absolute;
   width: 95%;
-  margin: 0 auto;
+  right: 10%;
+  /* margin: 0 auto; */
+  
 }
 
 #navbar ul {

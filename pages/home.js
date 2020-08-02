@@ -15,13 +15,6 @@ export default class HomePage {
 
           <!-- frontpage image and info bar -->
   <section id="frontpageImage" >
-  <div id="navbar"> 
-  <ul>
-      <li><a href="#about" onclick="appendWpPosts()">Om CFH</a></li>
-      <li><a href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
-      <li><a href="#info">Info</a></li>
-    </ul>
-    </div>
   <div id="frontpageLogoDiv">
     <img id="frontpageLogo" src="images/cfhLogo.png">
   </div>
@@ -32,7 +25,7 @@ export default class HomePage {
   <div  class="socialMedia">
     <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
     <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
-    <a href="https://www.livogland.dk/lokale-aktionsgrupper"><img id="lag" src="images/LAG_logo_2.png"></a>
+    <a target="_blank" href="https://www.livogland.dk/lokale-aktionsgrupper"><img id="lag" src="images/LAG_logo_2.png"></a>
   </div>
   
   </section>
@@ -86,7 +79,7 @@ export default class HomePage {
   //Johanne
   fetchDescription() {
 
-    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=2&per_page=17")
+    fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=10&per_page=17")
       .then((response) => {
         return response.json();
       })
