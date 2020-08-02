@@ -34,22 +34,23 @@ class SpaService {
 
   // show page or tab
   showPage(pageId) {
-    if (pageId === 'admin' || pageId === 'login') {
-      this.hideAllPages();
-      let page = document.querySelector(`#${pageId}`);
-      if (page != undefined)
-        page.style.display = "block";
-    } else {
-      if (window.innerWidth <= 1024) {
-        this.hideAllPages();
-        document.querySelector(`#${pageId}`).style.display = "block";
-        this.setActiveTab(pageId);
-      }
-    }
+    // if (pageId === 'admin' || pageId === 'login') {
+    // this.hideAllPages();
+    // let page = document.querySelector(`#${pageId}`);
+    // if (page != undefined)
+    //   page.style.display = "block";
+    // } else {
+    // if (window.innerWidth <= 1024) {
+    // this.hideAllPages();
+    document.querySelector(`#${pageId}`).style.display = "block";
+    // this.setActiveTab(pageId);
+    // }
+    // }
   }
 
   // sets active tabbar/ menu item
   setActiveTab(pageId) {
+    console.log(pageId)
     for (let navItem of this.navItems) {
       if (`#${pageId}` === navItem.getAttribute("href")) {
         navItem.classList.add("active");
@@ -68,107 +69,146 @@ class SpaService {
   // function is called 'onhashchange'
   // ---------------  Maja ---------------
   pageChange() {
+    // let navigationEtape = document.querySelector('.navigationEtape');
+    let tabbar = document.querySelector('.tabbar'); // mobilmenu
+    let aside = document.querySelector('aside'); // aside
+    let navbar = document.querySelector('#navbar'); // topmenu
+
+    aside.style.display = 'block';
+    tabbar.style.display = 'block';
+    navbar.style.display = 'block';
+
+
+    // let maparea = document.querySelector('.maparea');
 
     let page = this.defaultPage;
     if (window.location.hash) {
       page = window.location.hash.slice(1);
     }
+    loaderService.show(true) // turn off the loader
+    this.hideAllPages();
+    this.showPage(page);
+
 
     if (page === 'admin' || page === 'login') {
 
-      document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
-      document.querySelector('.maparea').style.display = 'none'; // remove content
-      document.querySelector('aside').style.display = 'none'; // remove aside
-      document.querySelector('.tabbar').style.display = 'none'; // remove aside
+      // navigationEtape.style.display = 'none'; // remove aside
+      // maparea.style.display = 'none'; // remove content
+      aside.style.display = 'none'; // remove aside
+      tabbar.style.display = 'none'; // remove aside
 
       this.showPage(page);
       loaderService.show(false) // turn off the loader
     } else {
       document.querySelector('.logout').style.display = 'none'; // remove aside
-      document.querySelector('#login').style.display = 'none'; // remove aside
-
-
-      // Only show loader the first time on each page
-      if (this.visitedPages.indexOf(page) === -1) {
-        loaderService.show(true)
-      }
-      this.visitedPages.push(page)
-
-
-
-      if (window.innerWidth > 1024) { // if desktop navigate to frontpage
-        if (page === 'about' || page === 'merchendice' || page === 'info') {
-
-
-          this.hideAllPages();
-
-          // about.style.display = 'none';
-          // merchendice.style.display = 'none';
-          // info.style.display = 'none';
-
-          document.querySelector(`#${page}`).style.display = 'block';
-
-          console.log('extra page')
-          document.querySelector('#navbar').style.display = 'block';
-          let home = document.querySelector('#home');
-          let maparea = document.querySelector('.maparea');
-          home.style.display = 'none';
-          maparea.style.display = 'none';
-        } else {
-          this.navigateTo('');
-        }
-      } else {
-        this.showPage(page);
-
-        //
-        if (page === 'grid-posts') {
-          document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
-          document.querySelector('.maparea').style.display = 'block'; // show content
-          document.querySelector('aside').style.display = 'block'; // show aside
-
-          scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
-          if (this.visitedPages[0] !== page) {
-            scrollService.createFirstTabUnderline(scrollService.chosenNumber) // Create a underline, if this page wasn´t loaded first
-          }
-
-          if (this.navCounter === 0) { // create markers the first time, the map is visited
-            stageCircles.template();
-            this.navCounter++
-          }
-          loaderService.show(false) // turn off the loader
-
-
-        } else if (page === 'home') {
-          if (window.innerWidth <= 1024) { // Hide or show elements based on screen width
-            document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
-            document.querySelector('.maparea').style.display = 'none'; // remove content
-            document.querySelector('aside').style.display = 'none'; // remove aside
-          } else {
-            document.querySelector('.navigationEtape').style.display = 'block'; // show aside
-            document.querySelector('.maparea').style.display = 'block'; // show content
-            document.querySelector('aside').style.display = 'block'; // show aside
-          }
-
-          loaderService.show(false) // turn off the loader
-
-
-        } else if (page === 'mapid') {
-          document.querySelector('.navigationEtape').style.display = 'block'; // show aside
-          document.querySelector('.maparea').style.display = 'block'; // show content
-          document.querySelector('aside').style.display = 'block'; // show aside
-          if (this.visitedPages[0] !== page) { // if map wasn´t the first page
-            map._onResize(); // run the map
-          }
-          loaderService.show(false) // turn off the loader
-          if (this.counter === 0) { // create markers the first time, the map is visited
-            fetchService.fetchMarkers()
-            stageCircles.template();
-            this.counter++
-          }
-
-        }
-      }
+      // document.querySelector('#login').style.display = 'none'; // remove aside
     }
+
+
+    // Only show loader the first time on each page
+    if (this.visitedPages.indexOf(page) === -1) {
+      loaderService.show(true)
+    }
+    this.visitedPages.push(page)
+
+
+
+    // if (window.innerWidth > 1024) { // if desktop navigate to frontpage
+    if (page === 'about' || page === 'merchendice' || page === 'info') {
+      aside.style.display = "none"
+    }
+
+
+    //   this.hideAllPages();
+
+    //   // about.style.display = 'none';
+    //   // merchendice.style.display = 'none';
+    //   // info.style.display = 'none';
+
+    //   document.querySelector(`#${page}`).style.display = 'block';
+
+    //   console.log('extra page')
+    //   document.querySelector('#navbar').style.display = 'block';
+    //   let home = document.querySelector('#home');
+    //   let maparea = document.querySelector('.maparea');
+    //   home.style.display = 'none';
+    //   maparea.style.display = 'none';
+    // } else {
+    // this.navigateTo('');
+    // }
+    // } else {
+    //   this.showPage(page);
+
+    //
+
+    if (window.innerWidth <= 1024) {
+
+      if (page === 'grid-posts') {
+        navbar.style.display = 'none';
+        // document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
+        // document.querySelector('.maparea').style.display = 'block'; // show content
+        // aside.style.display = 'block'; // show aside
+
+        scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
+        if (this.visitedPages[0] !== page) {
+          scrollService.createFirstTabUnderline(scrollService.chosenNumber) // Create a underline, if this page wasn´t loaded first
+        }
+
+        if (this.navCounter === 0) { // create markers the first time, the map is visited
+          stageCircles.template();
+          this.navCounter++
+        }
+        // loaderService.show(false) // turn off the loader
+
+
+      } else if (page === 'home') {
+
+        // document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
+        // document.querySelector('.maparea').style.display = 'none'; // remove content
+        aside.style.display = 'none'; // remove aside
+
+        // else {
+        //   document.querySelector('.navigationEtape').style.display = 'block'; // show aside
+        //   document.querySelector('.maparea').style.display = 'block'; // show content
+        //   document.querySelector('aside').style.display = 'block'; // show aside
+        //   this.showPage(page)
+        //   console.log(page)
+        // }
+
+        // loaderService.show(false) // turn off the loader
+
+
+      } else if (page === 'mapid') {
+        navbar.style.display = 'none';
+        // document.querySelector('.navigationEtape').style.display = 'block'; // show aside
+        // document.querySelector('.maparea').style.display = 'block'; // show content
+        // document.querySelector('aside').style.display = 'block'; // show aside
+        if (this.visitedPages[0] !== page) { // if map wasn´t the first page
+          map._onResize(); // run the map
+        }
+        // loaderService.show(false) // turn off the loader
+        if (this.counter === 0) { // create markers the first time, the map is visited
+          fetchService.fetchMarkers()
+          stageCircles.template();
+          this.counter++
+        }
+
+
+      }
+    } else if (window.innerWidth > 1024) {
+      tabbar.style.display = 'none';
+      console.log('stor')
+      if (page === 'home' || page === 'grid-posts' || page === 'mapid') {
+        this.showPage('home');
+        this.showPage('grid-posts');
+        this.showPage('mapid');
+      }
+
+    }
+
+    this.showPage(page);
+    loaderService.show(false) // turn off the loader
+
   }
 
   reloadPage() {

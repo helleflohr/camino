@@ -1050,7 +1050,7 @@ form button {
   width: 49%;
 }
 
-.leaflet-popup-content h4 {
+.leaflet-po+pup-content h4 {
   font-size: 1.7em;
 }
 
@@ -1120,6 +1120,7 @@ form button {
   width: 95%;
   right: 10%;
   /* margin: 0 auto; */
+  z-index: 99;
   
 }
 
