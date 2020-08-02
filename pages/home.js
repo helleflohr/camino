@@ -114,11 +114,7 @@ export default class HomePage {
 
     for (let post of posts) {
 
-
-
-
-
-      document.querySelector("#grid-posts").innerHTML += /*html*/`
+      document.querySelector("#grid-posts").innerHTML += `
     
     <article id="stage${post.acf.stageNumber}" class="grid-item" onmouseover="goTo(${post.acf.stageNumber})" onmouseout="goFrom(${post.acf.stageNumber})">
 
@@ -174,7 +170,7 @@ export default class HomePage {
           </article>
 
           <div>
-            <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
+          <p id="btnSay" class="zoom" onclick="modalOpen(${post.acf.stageNumber})">Hvad siger du?</p>
           </div>
 
         
@@ -205,20 +201,17 @@ export default class HomePage {
     }
 
 
+  };
 
+
+  //Johanne
+  // gets the featured image url
+  getFeaturedImageUrl(post) {
+    let imageUrl = "";
+    if (post._embedded['wp:featuredmedia']) {
+      imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return imageUrl;
   }
-
-};
-
-
-//Johanne
-// gets the featured image url
-getFeaturedImageUrl(post) {
-  let imageUrl = "";
-  if (post._embedded['wp:featuredmedia']) {
-    imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-  }
-  return imageUrl;
-}
 
 }
