@@ -29,9 +29,12 @@ let loginPage = new LoginPage();
 let aboutPage = new AboutPage();
 let merchendicePage = new MerchendicePage();
 
+fetchService.getFrontpageText();
 stageCircles.template();
 
 loaderService.show(true);
+
+console.log(fetchService.frontpageText)
 authService.init();
 spaService.init();
 
@@ -69,7 +72,8 @@ window.deletePost = (postId) => adminService.deletePost(postId);
 window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
 window.appendWpPosts = () => aboutPage.appendWpPosts();
-window.appendMerchendice = () => merchendicePage.appendMerchendice()
+window.appendMerchendice = () => merchendicePage.appendMerchendice();
+window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

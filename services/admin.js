@@ -2,7 +2,7 @@ import firebaseService from '../services/firebase.js'
 import loaderService from "../services/loader.js"
 
 class AdminService {
-    constructor() {}
+    constructor() { }
 
     init() {
         this.template();

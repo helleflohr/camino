@@ -10,6 +10,7 @@ class FetchService {
         this.pagesFromWP = [];
         this.aboutPost = [];
         this.merchendicePosts = [];
+        this.frontpageText = [];
         this.fetchStartMarkers();
         // this.fetchAboutCFH();
     }
@@ -93,6 +94,72 @@ class FetchService {
         loaderService.show(false) // turn off the loader
 
     }
+
+    //.......................... Fetch the frontpage text from wordpress api .................................
+    async fetchFrontpageText() {
+        let response = await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=16")
+        this.frontpageText = await response.json();
+        console.log('fetcher', this.frontpageText)
+        this.appendFrontpageInfo()
+    }
+
+    // Get the descriptions
+    async getFrontpageText() {
+        console.log(this.frontpageText.length)
+        if (this.frontpageText.length === 0) { // if the description array is empty ...
+            await this.fetchFrontpageText(); // fetch the descriptions
+        }
+        console.log('getter', this.frontpageText)
+        return this.frontpageText // and return the descriptions
+
+    }
+
+    //.......................... APPEND FRONTPAGE INFO .................................
+    appendFrontpageInfo() {
+
+
+        document.querySelector('#frontpageTextDiv').innerHTML = /*html*/ ` 
+    <h1>${this.frontpageText[0].acf.headline}</h1>
+    <h2>${this.frontpageText[0].acf.catchphrase}</h2>
+  `
+
+
+        let fpSection = document.querySelector('#frontpageSection');
+        let h2 = fpSection.querySelectorAll('div h2');
+        let p = fpSection.querySelectorAll('div p');
+        console.log(h2, p)
+
+
+        for (let i = 0; i < h2.length; i++) {
+            if (i === 0) {
+                h2[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info1.title}
+            `
+                p[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info1.text}
+            `
+            } else if (i === 1) {
+                h2[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info2.title}
+            `
+                p[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info2.text}
+            `
+            } else if (i === 2) {
+                h2[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info3.title}
+            `
+                p[i].innerHTML = /*html*/ `
+              ${fetchService.frontpageText[0].acf.info3.text}
+            `
+            }
+
+
+        }
+        loaderService.show(false) // turn off the loader
+    }
+
+
 }
 const fetchService = new FetchService();
 export default fetchService;

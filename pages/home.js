@@ -10,6 +10,7 @@ export default class HomePage {
   }
 
   template() {
+
     document.getElementById('content').innerHTML += /*html*/ `
       <section id="home" class="page ">
 
@@ -19,8 +20,8 @@ export default class HomePage {
     <img id="frontpageLogo" src="images/cfhLogo.png">
   </div>
   <div id="frontpageTextDiv">
-    <h1> Camino Frøs Herred</h1>
-    <h2>Åbner sig for natur, kultur og fordybelse</h2>
+    <!--<h1> Camino Frøs Herred</h1>
+    <h2>Åbner sig for natur, kultur og fordybelse</h2>-->
   </div>
   <div  class="socialMedia">
     <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
@@ -34,12 +35,10 @@ export default class HomePage {
 
   <section id="frontpageSection" >
       <div>
-      <img src="images/ikoner/generelt.svg" alt="Kompasnål ikon">
+     <img src="images/ikoner/generelt.svg" alt="Kompasnål ikon">
     
-      <h2>Generelt</h2>
-      <p>Ruten er ca. 108 km, som bølger sig rundt i det gamle Frøs Herred. Den byder på flere spændende oplevelser på
-        højderyggen mellem Kongeåen og Gram Å, og grænser op til den gamle grænse fra 1864 og til 1920, som var en
-        brydningstid for området.</p>
+      <h2></h2>
+      <p></p>
         
     </div>
     <img class="arrow generalArrow" src="images/ikoner/nyPilGenerelt.png" alt="pil">
@@ -47,19 +46,15 @@ export default class HomePage {
     <div>
     <img onclick="scrollToElement('mapid')" src="images/ikoner/kort.svg" alt="Kort ikon">
    
-      <h2 onclick="scrollToElement('mapid')">Kort</h2>
-      <p>Du kan nemt få et overblik over hele Caminoen på kortet. Her kan du se alle 11 etaper, og vælge hvilken etape
-        du ønsker information om. Du har også mulighed for at få et overblik og rutens faciliteter. Du kan også printe
-        kortet hjemmefra og medbringe til turen.</p>
+      <h2 onclick="scrollToElement('mapid')"></h2>
+      <p></p>
     </div>
     <img class="arrow descriptionArrow" src="images/ikoner/nyPilGenerelt.png">
     <div>
     <img  onclick="scrollToElement('stage1')" src="images/ikoner/rutebeskrivelser.svg" alt="Rute ikon">
  
-      <h2 onclick="scrollToElement('stage1')">Rutebeskrivelser</h2>
-      <p>Caminoen er inddelt i 11 etaper, som giver muligheden for at gå noget af ruten og derved træne op til at kunne
-        gå hele den spanske Camino en dag. For hver etape er der rutebeskrivelser som udførligt vejleder dig gennem turen. Der er
-        også billeder og udtalelser fra andre vandrere.</p>
+      <h2 onclick="scrollToElement('stage1')"></h2>
+      <p></p>
     </div>
   </section>
 
@@ -91,15 +86,20 @@ export default class HomePage {
         setTimeout(() => {
           //fjerner spinner efter load. 
           // When fetch is done show() is false and adds hide on #loader
-          loaderService.show(false);
+          // loaderService.show(false);
         }, 200);
 
       });
+
+
   }
+
+
 
   //.......................... APPEND POSTS .................................
   //Johanne 
   appendPosts(posts) {
+
     //sort the posts by acf stagenumber in ascending order
     posts.sort(function (x, y) {
       return x.acf.stageNumber - y.acf.stageNumber;

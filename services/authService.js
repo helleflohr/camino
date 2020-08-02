@@ -23,7 +23,7 @@ class AuthService {
     }
 
     userAuthenticated(user) {
-        if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82' /*cfh@mail.dk*/ || user.uid === 'jXl7mEtqUrgGhkNxNaFoguKFqQp1' /*caminofrosherred@mail.dk*/ ) {
+        if (user.uid === 'A3qotTZ8O2SvkBro8MdN6fcMnn82' /*cfh@mail.dk*/ || user.uid === 'jXl7mEtqUrgGhkNxNaFoguKFqQp1' /*caminofrosherred@mail.dk*/) {
             // spaService.hideTabbar(false);
             adminService.init(); // Bliver først vist når det er authenticated
             spaService.showPage('admin');
@@ -46,12 +46,12 @@ class AuthService {
             signInSuccessUrl: '#admin'
         };
         this.ui.start('#firebaseui-auth-container', uiConfig);
-        loaderService.show(false);
+        // loaderService.show(false);
     }
 
     logout() {
         document.querySelector('.logout').style.display = 'none'; // remove aside
-        if (document.querySelector('#admin') === false) {} else {
+        if (document.querySelector('#admin') === false) { } else {
             document.querySelector('#admin').style.display = 'none';
         }
 
