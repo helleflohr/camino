@@ -73,6 +73,7 @@ class SpaService {
     let tabbar = document.querySelector('.tabbar'); // mobilmenu
     let aside = document.querySelector('aside'); // aside
     let navbar = document.querySelector('#navbar'); // topmenu
+    let maparea = document.querySelector('.maparea'); //maparea 
 
     aside.style.display = 'block';
     tabbar.style.display = 'block';
@@ -116,6 +117,7 @@ class SpaService {
     // if (window.innerWidth > 1024) { // if desktop navigate to frontpage
     if (page === 'about' || page === 'merchendice' || page === 'info') {
       aside.style.display = "none"
+      maparea.style.display = "none"
     }
 
 
