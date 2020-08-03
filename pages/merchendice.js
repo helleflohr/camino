@@ -22,29 +22,26 @@ export default class MerchendicePage {
 
         for (let post of posts) {
 
+
+
+
             document.querySelector("#merchendice").innerHTML += `
-            <div class="card">
-                <div class="mySlides fade">
-                    <div class="merchendiceImage">
-                    <img src="${post.acf.images}">
-                    </div>
-          
-                    <a class="prev" onclick="plusSlides(-1, )">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, )">&#10095;</a>
-                </div>
-                    <h2>${post.title.rendered}</h2>
-                    <p class="price">${post.acf.price} kr.</p>
-                    <p>${post.content.rendered}</p>
+                    <div class="card">
+                    
+                        <img src="${post.acf.images}">
+             
+                        <h2>${post.title.rendered}</h2>
+                        <p class="price">${post.acf.price} kr.</p>
+                        <p>${post.content.rendered}</p>
                
-            </div>
-      `;
-
-        }
-
-
-
-
-
+                     </div>`
+        };
 
     }
+
+
+
+
+
+
 }

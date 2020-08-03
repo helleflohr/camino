@@ -2,7 +2,6 @@
 
 class SlideService {
   constructor() {
-    this.fitBounds = [];
     this.slideIndex = 1;
   }
 
@@ -33,6 +32,9 @@ class SlideService {
 
     slides[this.slideIndex - 1].style.display = "block";
   }
+
+
+
 }
 
 const slideService = new SlideService();

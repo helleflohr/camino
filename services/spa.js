@@ -118,6 +118,7 @@ class SpaService {
     if (page === 'about' || page === 'merchendice' || page === 'info') {
       aside.style.display = "none"
       maparea.style.display = "none"
+
     }
 
 
