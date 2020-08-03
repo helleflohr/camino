@@ -310,7 +310,7 @@ hr {
 
 /* ---------- home page styling ---------- */
 #frontpageImage {
-  background-image: url(images/lake-mobile.jpg);
+  background-image: url(images/hero-image-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1362,7 +1362,7 @@ form button {
   }
 
   #frontpageImage {
-    background-image: url(images/lake-tablet.jpg);
+    background-image: url(images/hero-image-tablet.jpg);
   }
 
   .tabbar img {
@@ -1408,7 +1408,7 @@ form button {
   /* -------------------- */
 
   #frontpageImage {
-    background-image: url(images/lake.jpg);
+    background-image: url(images/hero-image-desktop.jpg);
   }
 
   #frontpageSection .arrow {
