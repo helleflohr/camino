@@ -74,6 +74,8 @@ window.logout = () => authService.logout();
 window.appendWpPosts = () => aboutPage.appendWpPosts();
 window.appendMerchendice = () => merchendicePage.appendMerchendice();
 window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
+window.burgerMenu = () => scrollService.burgerMenu();
+
 
 // ---------------  Maja ---------------
 // Set map coordinates for different devices

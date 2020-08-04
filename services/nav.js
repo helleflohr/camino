@@ -21,6 +21,17 @@ class ScrollService {
         this.chosenNumber;
     }
 
+     // Burgermenu
+
+     burgerMenu() {
+        var x = document.getElementById("burgercontent");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
     // Scroll to a specific element
     scrollToElement(element) {
         let top = document.querySelector(`#${element}`);

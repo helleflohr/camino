@@ -350,13 +350,13 @@ hr {
   font-size: 1.1em;
 }
 
-#burgercontent a:hover {
+/* #burgercontent a:hover {
   background-color: #ddd;
 }
 
 #burgerdropdown:hover #burgercontent {
   display: block;
-}
+} */
 
 #navbar ul {
   display: none;
