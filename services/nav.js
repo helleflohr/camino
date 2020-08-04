@@ -22,7 +22,6 @@ class ScrollService {
     }
 
      // Burgermenu
-
      burgerMenu() {
         var x = document.getElementById("burgercontent");
         if (x.style.display === "block") {
