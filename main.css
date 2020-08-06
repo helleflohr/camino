@@ -508,6 +508,11 @@ h2 {
 /* ---------- merchendice page styling ---------- */
 
 #merchendice {
+  max-width: 1025px;
+  margin: 0 auto;
+}
+
+#merchendiceDiv {
   display: flex;
   flex-wrap: wrap;
 }
@@ -527,17 +532,29 @@ h2 {
   font-size: 22px;
 }
 
-.merchendiceImage {
+.card img {
   margin-right: 10%;
-  width: 80%;
+  width: 90%;
+  height: auto;
   margin: 0 auto;
 }
 
-#merchendice p {
+#merchendiceDiv p {
   text-align: left;
 }
 
-/* ---------- merchendice page styling ---------- */
+/* ---------- info page styling ---------- */
+#info {
+  max-width: 1225px;
+  margin: 0 auto;
+}
+
+#infoDiv {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em auto;
+}
+
 .infoCard {
   box-shadow: var(--box-shadow);
   width: 90%;
@@ -553,7 +570,7 @@ figure img {
   margin: 2em auto;
 }
 
-#info p {
+#infoDiv p {
   text-align: left;
 }
 
@@ -1840,10 +1857,6 @@ form button {
   }
 
   /* Genereltsiden */
-  #merchendice {
-    display: flex !important;
-    margin-left: 10%;
-  }
 
   .card {
     margin-top: 12%;
@@ -1853,20 +1866,15 @@ form button {
   #generelt {
     width: 70%;
     display: block;
-    margin: 0 0 0 19%
+    margin: 0 auto;
   }
 
   #generelt h2 {
     margin-top: 12%;
   }
 
-  #merchendice {
-    max-width: 1025px;
-    margin: 0 auto;
-  }
-
   .card {
-    width: 33%;
+    width: 30%;
   }
 
 }

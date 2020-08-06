@@ -74,10 +74,12 @@ class SpaService {
     let aside = document.querySelector('aside'); // aside
     let navbar = document.querySelector('#navbar'); // topmenu
     let maparea = document.querySelector('.maparea'); //maparea 
+    let content = document.querySelector('#content');
 
     aside.style.display = 'block';
     tabbar.style.display = 'block';
     navbar.style.display = 'block';
+    content.style.width = '100vw';
 
 
     // let maparea = document.querySelector('.maparea');
@@ -122,35 +124,10 @@ class SpaService {
     }
 
 
-    //   this.hideAllPages();
-
-    //   // about.style.display = 'none';
-    //   // merchendice.style.display = 'none';
-    //   // info.style.display = 'none';
-
-    //   document.querySelector(`#${page}`).style.display = 'block';
-
-    //   console.log('extra page')
-    //   document.querySelector('#navbar').style.display = 'block';
-    //   let home = document.querySelector('#home');
-    //   let maparea = document.querySelector('.maparea');
-    //   home.style.display = 'none';
-    //   maparea.style.display = 'none';
-    // } else {
-    // this.navigateTo('');
-    // }
-    // } else {
-    //   this.showPage(page);
-
-    //
-
     if (window.innerWidth <= 1024) {
 
       if (page === 'grid-posts') {
         navbar.style.display = 'none';
-        // document.querySelector('.navigationEtape').style.display = 'block'; // Show aside
-        // document.querySelector('.maparea').style.display = 'block'; // show content
-        // aside.style.display = 'block'; // show aside
 
         scrollService.scrollToStage(scrollService.chosenNumber); // scroll to the chosen number
         if (this.visitedPages[0] !== page) {
@@ -161,43 +138,27 @@ class SpaService {
           stageCircles.template();
           this.navCounter++
         }
-        // loaderService.show(false) // turn off the loader
-
 
       } else if (page === 'home') {
 
-        // document.querySelector('.navigationEtape').style.display = 'none'; // remove aside
-        // document.querySelector('.maparea').style.display = 'none'; // remove content
         aside.style.display = 'none'; // remove aside
 
-        // else {
-        //   document.querySelector('.navigationEtape').style.display = 'block'; // show aside
-        //   document.querySelector('.maparea').style.display = 'block'; // show content
-        //   document.querySelector('aside').style.display = 'block'; // show aside
-        //   this.showPage(page)
-        //   console.log(page)
-        // }
-
-        // loaderService.show(false) // turn off the loader
 
 
       } else if (page === 'mapid') {
         navbar.style.display = 'none';
-        // document.querySelector('.navigationEtape').style.display = 'block'; // show aside
-        // document.querySelector('.maparea').style.display = 'block'; // show content
-        // document.querySelector('aside').style.display = 'block'; // show aside
+        content.style.width = '90vw';
         if (this.visitedPages[0] !== page) { // if map wasn´t the first page
           map._onResize(); // run the map
         }
-        // loaderService.show(false) // turn off the loader
+
         if (this.counter === 0) { // create markers the first time, the map is visited
           fetchService.fetchMarkers()
           stageCircles.template();
           this.counter++
         }
-
-
       }
+
     } else if (window.innerWidth > 1024) {
       tabbar.style.display = 'none';
       console.log('stor')
@@ -205,6 +166,7 @@ class SpaService {
         this.showPage('home');
         this.showPage('grid-posts');
         this.showPage('mapid');
+        content.style.width = '90vw';
       }
 
     }
