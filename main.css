@@ -1234,7 +1234,7 @@ form button {
 
 #navbar li a {
   /* display: block; */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color:var(--camino-green);
   padding: .2em;
 
   /* text-align: center; */
@@ -1467,13 +1467,12 @@ form button {
 
   #navbar {
     width: 100%;
-    margin-bottom: -10%;
   }
 
   #navbar ul {
     display: block;
     list-style-type: none;
-    padding: 2% 2% 0 0;
+    padding: 1% 1% 0 0;
   }
 
   #navbar li {
@@ -1597,7 +1596,7 @@ form button {
   #frontpageLogoDiv {
     width: 30%;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 8%;
   }
 
   #frontpageLogo {
@@ -1815,10 +1814,28 @@ form button {
     cursor: pointer;
   }
 
+/* Genereltsiden */
+  #merchendice {
+  display: flex!important;
+  margin-left: 10%;
+  }
+
+  .card {
+    margin-top: 12%;
+    
+  }
+
   #generelt {
-    max-width: 1024px;
+    width: 70%;
     display: block;
-    margin: 2em auto;
+    margin: 0 0 0 19%
+  }
+
+  #generelt h2 {
+    margin-top: 12%;
+  }
+
+  #about {
   }
 
   #merchendice {
