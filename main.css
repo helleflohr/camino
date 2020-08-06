@@ -519,6 +519,7 @@ h2 {
   margin: 2em auto;
   text-align: center;
   font-family: arial;
+  padding: 1em;
 }
 
 .price {
@@ -530,6 +531,30 @@ h2 {
   margin-right: 10%;
   width: 80%;
   margin: 0 auto;
+}
+
+#merchendice p {
+  text-align: left;
+}
+
+/* ---------- merchendice page styling ---------- */
+.infoCard {
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 500px;
+  margin: 2em auto;
+  text-align: center;
+  font-family: arial;
+  padding: 1em;
+}
+
+figure img {
+  max-width: 450px;
+  margin: 2em auto;
+}
+
+#info p {
+  text-align: left;
 }
 
 /* ---------- map ---------- */
@@ -1234,7 +1259,7 @@ form button {
 
 #navbar li a {
   /* display: block; */
-  background-color:var(--camino-green);
+  background-color: var(--camino-green);
   padding: .2em;
 
   /* text-align: center; */
@@ -1814,15 +1839,15 @@ form button {
     cursor: pointer;
   }
 
-/* Genereltsiden */
+  /* Genereltsiden */
   #merchendice {
-  display: flex!important;
-  margin-left: 10%;
+    display: flex !important;
+    margin-left: 10%;
   }
 
   .card {
     margin-top: 12%;
-    
+
   }
 
   #generelt {
@@ -1833,9 +1858,6 @@ form button {
 
   #generelt h2 {
     margin-top: 12%;
-  }
-
-  #about {
   }
 
   #merchendice {

@@ -10,6 +10,7 @@ class FetchService {
         this.pagesFromWP = [];
         this.aboutPost = [];
         this.merchendicePosts = [];
+        this.infoPosts = [];
         this.frontpageText = [];
         this.fetchStartMarkers();
         // this.fetchAboutCFH();
@@ -90,6 +91,23 @@ class FetchService {
             })
             .then((json) => {
                 this.merchendicePosts = json;
+            });
+        loaderService.show(false) // turn off the loader
+
+    }
+
+    //.......................... Fetch category Info from WP .................................
+    async getInfoPosts() {
+
+
+        await fetch("https://www.xn--caminofrsherred-dub.dk/wordpress/wp-json/wp/v2/posts?_embed&categories=14")
+            .then(function (response) {
+
+                return response.json();
+
+            })
+            .then((json) => {
+                this.infoPosts = json;
             });
         loaderService.show(false) // turn off the loader
 

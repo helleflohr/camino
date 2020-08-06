@@ -3,6 +3,8 @@ import HomePage from "./pages/home.js";
 import LoginPage from "./pages/login.js";
 import AboutPage from "./pages/about.js";
 import MerchendicePage from "./pages/merchendice.js"
+import InfoPage from "./pages/info.js"
+
 
 
 // import your services
@@ -28,6 +30,7 @@ let homePage = new HomePage();
 let loginPage = new LoginPage();
 let aboutPage = new AboutPage();
 let merchendicePage = new MerchendicePage();
+let infoPage = new InfoPage();
 
 fetchService.getFrontpageText();
 stageCircles.template();
@@ -73,6 +76,7 @@ window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
 window.appendWpPosts = () => aboutPage.appendWpPosts();
 window.appendMerchendice = () => merchendicePage.appendMerchendice();
+window.appendInfo = () => infoPage.appendInfo();
 window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
 window.burgerMenu = () => scrollService.burgerMenu();
 
