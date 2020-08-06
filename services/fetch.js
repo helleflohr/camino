@@ -145,7 +145,33 @@ class FetchService {
         let fpSection = document.querySelector('#frontpageSection');
         let h2 = fpSection.querySelectorAll('div h2');
         let p = fpSection.querySelectorAll('div p');
-        console.log(h2, p)
+        let liAbout = document.querySelectorAll(".liAbout");
+        let liMerch = document.querySelectorAll(".liMerch");
+        let liInfo = document.querySelectorAll(".liInfo");
+        let liHome = document.querySelectorAll(".liHome");
+
+        for (const a of liAbout) {
+            a.innerHTML = /*html*/ `
+            ${fetchService.frontpageText[0].acf.topMenu.theAboutPage}
+          `;
+        }
+        for (const a of liMerch) {
+            a.innerHTML = /*html*/ `
+            ${fetchService.frontpageText[0].acf.topMenu.theProductPage}
+          `;
+        }
+        for (const a of liInfo) {
+            a.innerHTML = /*html*/ `
+            ${fetchService.frontpageText[0].acf.topMenu.theInfoPage}
+          `;
+        }
+        for (const a of liHome) {
+            a.innerHTML = /*html*/ `
+            ${fetchService.frontpageText[0].acf.topMenu.theHomePage}
+          `;
+        }
+
+
 
 
         for (let i = 0; i < h2.length; i++) {

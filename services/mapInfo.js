@@ -80,8 +80,8 @@ class MapInfoService {
             Parkering = new iconClass({
                 iconUrl: 'images/ikoner-map/Parkering.svg'
             }),
-            Hvilesteder = new iconClass({
-                iconUrl: 'images/ikoner-map/Hvilesteder.svg'
+            Kaffepletter = new iconClass({
+                iconUrl: 'images/ikoner-map/Kaffepletter.svg'
             })
 
 
@@ -102,7 +102,7 @@ class MapInfoService {
         let LegepladserArr = [];
         let IndkøbsmulighederArr = [];
         let ParkeringArr = [];
-        let HvilestederArr = [];
+        let KaffepletterArr = [];
 
         // --------------- Create a marker on the map for each marker in wordpress ---------------
         for (let post of json) {
@@ -141,7 +141,7 @@ class MapInfoService {
         LegepladserArr = this.clustermarkers(LegepladserArr);
         IndkøbsmulighederArr = this.clustermarkers(IndkøbsmulighederArr);
         ParkeringArr = this.clustermarkers(ParkeringArr);
-        HvilestederArr = this.clustermarkers(HvilestederArr);
+        KaffepletterArr = this.clustermarkers(KaffepletterArr);
 
 
         // --------------- Be on map from start ---------------
