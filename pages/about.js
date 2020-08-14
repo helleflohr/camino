@@ -19,8 +19,6 @@ export default class AboutPage {
     await fetchService.getAboutPost();
     let wpPost = fetchService.aboutPost[0];
 
-    console.log("Jeg logger post" + wpPost);
-
 
     console.log("Generel side funktion")
     document.querySelector("#generelt").innerHTML = `

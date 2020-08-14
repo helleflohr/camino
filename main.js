@@ -76,6 +76,7 @@ window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
 window.appendWpPosts = () => aboutPage.appendWpPosts();
 window.appendMerchendice = () => merchendicePage.appendMerchendice();
+window.appendMerchendiceTopText = () => merchendicePage.appendMerchendiceTopText();
 window.appendInfo = () => infoPage.appendInfo();
 window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
 window.burgerMenu = () => scrollService.burgerMenu();
