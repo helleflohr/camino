@@ -1,38 +1,38 @@
 import fetchService from "../services/fetch.js"
 export default class InfoPage {
-    constructor() {
-        this.template();
-    }
+  constructor() {
+    this.template();
+  }
 
-    template() {
-        document.getElementById('content').innerHTML += /*html*/ `
+  template() {
+    document.getElementById('content').innerHTML += /*html*/ `
         <section id="info" class="page">
       <section id="infoDiv"></section>
        
         </section>
       `;
-    }
+  }
 
-    async appendInfo() {
+  async appendInfo() {
 
-        await fetchService.getInfoPosts();
-        let posts = fetchService.infoPosts;
-        console.log(posts);
-        document.querySelector("#infoDiv").innerHTML = '';
+    await fetchService.getInfoPosts();
+    let posts = fetchService.infoPosts;
+    console.log(posts);
+    document.querySelector("#infoDiv").innerHTML = '';
 
-        for (let post of posts) {
+    for (let post of posts) {
 
 
-            document.querySelector("#infoDiv").innerHTML += `
+      document.querySelector("#infoDiv").innerHTML += `
                         <div class="infoCard">
-                        <p>${post.acf.Dato}</p>
+                        <p>Dato for event: ${post.acf.Dato}</p>
                         <h2>${post.title.rendered}</h2>
                         <p class="infoText">${post.content.rendered}</p>
                      </div>`
 
-        };
+    };
 
-    }
+  }
 
 
 
