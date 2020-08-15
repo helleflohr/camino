@@ -7,7 +7,7 @@
   --text-color-light: #FFF1DD;
   --background-light: rgb(253, 249, 244);
   --text-color-dark: #002F38;
-  --box-shadow: 0 4px 8px 0 rgb(253, 249, 244, 0.2);
+  --box-shadow: 0 8px 12px 0 rgb(253, 249, 244, 0.2);
 }
 
 /* ---------- general styling ---------- */
@@ -527,7 +527,6 @@ h2 {
 #infoDiv {
   display: flex;
   flex-wrap: wrap;
-
 }
 
 /* #infoDiv {
@@ -541,6 +540,7 @@ h2 {
 .card,
 .infoCard {
   box-shadow: var(--box-shadow);
+  background-color: var(--text-color-light);
   width: 90%;
   max-width: 300px;
   margin: 2em auto;
@@ -556,16 +556,23 @@ h2 {
 
 .card img,
 .infoCard img {
-  margin-right: 10%;
   width: 90%;
   height: auto;
   margin: 0 auto;
+  padding: 1em;
 }
 
 #merchendiceDiv p,
 #infoDiv p {
   text-align: left;
+  color: var(--text-color-dark);
 }
+
+#merchendiceDiv h2,
+#infoDiv h2 {
+  color: var(--text-color-dark);
+}
+
 
 .infoCard a {
   text-decoration: underline;
@@ -574,44 +581,12 @@ h2 {
 
 #merchendiceText h1 {
   font-size: 2.5em;
+  padding-bottom: 1em;
 }
 
 #merchendiceText p {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
-
-/* ---------- info page styling ---------- */
-/* #info {
-  max-width: 1025px;
-  margin: 0 auto;
-}
-
-#infoDiv {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2em auto;
-}
- */
-/* .infoCard {
-  box-shadow: var(--box-shadow);
-  width: 90%;
-  max-width: 500px;
-  margin: 2em auto;
-  text-align: center;
-  font-family: arial;
-  padding: 1em;
-}
-
-figure img {
-  max-width: 450px;
-  margin: 2em auto;
-  display: block;
-}
-
-/* #infoDiv p {
-  text-align: left;
-} */
-
 
 
 /* ---------- map ---------- */
