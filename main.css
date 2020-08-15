@@ -506,9 +506,17 @@ h2 {
   margin-top: 1em;
 }
 
+#generelt img {
+  display: block;
+  margin: 1em auto;
+  max-width: 550px;
+  height: auto;
+}
+
 /* ---------- merchendice og info page styling ---------- */
 
 #merchendice,
+#merchendiceText,
 #info {
   max-width: 1025px;
   margin: 0 auto;
@@ -518,7 +526,15 @@ h2 {
 #infoDiv {
   display: flex;
   flex-wrap: wrap;
+
+}
+
+#infoDiv {
   margin: 2em auto;
+}
+
+#merchendiceText {
+  padding: 5em 1em 1em 1em;
 }
 
 .card,
@@ -538,7 +554,7 @@ h2 {
 }
 
 .card img,
-.infoCard imgxs {
+.infoCard img {
   margin-right: 10%;
   width: 90%;
   height: auto;
@@ -553,6 +569,14 @@ h2 {
 .infoCard a {
   text-decoration: underline;
   color: var(--text-color-light);
+}
+
+#merchendiceText h1 {
+  font-size: 2.5em;
+}
+
+#merchendiceText p {
+  font-size: 1.5em;
 }
 
 /* ---------- info page styling ---------- */
