@@ -555,10 +555,10 @@ h2 {
 
 .card img,
 .infoCard img {
-  margin-right: 10%;
   width: 90%;
   height: auto;
   margin: 0 auto;
+  padding: 1em;
 }
 
 #merchendiceDiv p,
@@ -579,39 +579,6 @@ h2 {
 #merchendiceText p {
   font-size: 1.2em;
 }
-
-/* ---------- info page styling ---------- */
-/* #info {
-  max-width: 1025px;
-  margin: 0 auto;
-}
-
-#infoDiv {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2em auto;
-}
- */
-/* .infoCard {
-  box-shadow: var(--box-shadow);
-  width: 90%;
-  max-width: 500px;
-  margin: 2em auto;
-  text-align: center;
-  font-family: arial;
-  padding: 1em;
-}
-
-figure img {
-  max-width: 450px;
-  margin: 2em auto;
-  display: block;
-}
-
-/* #infoDiv p {
-  text-align: left;
-} */
-
 
 
 /* ---------- map ---------- */
