@@ -21,15 +21,20 @@ export default class InfoPage {
     document.querySelector("#infoDiv").innerHTML = '';
 
     for (let post of posts) {
-
-
-      document.querySelector("#infoDiv").innerHTML += `
+      if (post.acf.Dato == "") {
+        document.querySelector("#infoDiv").innerHTML += `
+        <div class="infoCard">
+        <h2>${post.title.rendered}</h2>
+        <p class="infoText">${post.content.rendered}</p>
+        </div>`
+      } else {
+        document.querySelector("#infoDiv").innerHTML += `
                         <div class="infoCard">
                         <p>Dato for event: ${post.acf.Dato}</p>
                         <h2>${post.title.rendered}</h2>
                         <p class="infoText">${post.content.rendered}</p>
                      </div>`
-
+      }
     };
 
   }

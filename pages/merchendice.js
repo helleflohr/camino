@@ -23,7 +23,6 @@ export default class MerchendicePage {
     for (let post of posts) {
       if (post.id === 964) {} else {
 
-
         document.querySelector("#merchendiceDiv").innerHTML += `
                         <div class="card">
                         <img src="${post.acf.image}">

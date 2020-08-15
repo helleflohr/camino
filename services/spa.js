@@ -140,7 +140,7 @@ class SpaService {
         }
 
       } else if (page === 'home') {
-
+        maparea.style.display = "block"
         aside.style.display = 'none'; // remove aside
 
 
