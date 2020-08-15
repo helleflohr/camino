@@ -383,6 +383,7 @@ hr {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 
 #frontpageTextDiv {
@@ -462,7 +463,7 @@ h2 {
 
 
 #frontpageSection .descriptionArrow {
-  right: -0.5%;
+  right: 2%;
   top: 7%;
   transform: rotate(90deg) scaleY(-1);
 }
@@ -529,9 +530,9 @@ h2 {
 
 }
 
-#infoDiv {
+/* #infoDiv {
   margin: 2em auto;
-}
+} */
 
 #merchendiceText {
   padding: 5em 1em 1em 1em;
@@ -1681,9 +1682,15 @@ form button {
   }
 
   #frontpageLogoDiv {
-    width: 30%;
-    margin-left: 5%;
-    margin-top: 8%;
+     width: auto;
+     height: 80%;
+    /*margin-left: 5%;
+    margin-top: 8%; */
+    position: absolute;
+    left: 5%;
+    top: 0;
+    margin: 0;
+    transform: translate(0, 20%);
   }
 
   #frontpageLogo {
@@ -1692,8 +1699,13 @@ form button {
 
   #frontpageTextDiv {
     width: 60%;
-    margin: 18% 0 0 2.5%;
-    text-align: left;
+    position: absolute;
+    /* margin: 18% 0 0 2.5%; */
+    left: 35%;
+    top: 0;
+    margin: 0;
+    transform: translate(0, 130%);
+    /* text-align: left; */
   }
 
   #frontpageImage h1 {
@@ -1726,7 +1738,8 @@ form button {
   }
 
   #frontpageSection h2 {
-    height: 20%;
+    height: 18%;
+    font-size: 2em;
     margin: 0;
   }
 
