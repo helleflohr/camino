@@ -1702,19 +1702,19 @@ form button {
   }
 
   #frontpageSection h2 {
-    height: 5%;
+    height: 20%;
     margin: 0;
   }
 
   #frontpageSection p {
-    height: 40%;
+    height: 50%;
     overflow-y: auto;
-    margin-top: 9%;
+    /* margin-top: 9%; */
   }
 
-  #frontpageSection img {
+  /* #frontpageSection img {
     width: 7%;
-  }
+  } */
 
   /* --------------------- Leaflet (map controls) -------------------*/
   .leaflet-control-layers-toggle {
