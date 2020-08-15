@@ -576,7 +576,7 @@ h2 {
 
 .infoCard a {
   text-decoration: underline;
-  color: var(--text-color-light);
+  color: var(--text-color-dark);
 }
 
 #merchendiceText h1 {
