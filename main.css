@@ -573,10 +573,11 @@ h2 {
 
 #merchendiceText h1 {
   font-size: 2.5em;
+  padding-bottom: 1em;
 }
 
 #merchendiceText p {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 /* ---------- info page styling ---------- */
