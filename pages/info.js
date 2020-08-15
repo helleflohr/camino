@@ -25,6 +25,7 @@ export default class InfoPage {
 
             document.querySelector("#infoDiv").innerHTML += `
                         <div class="infoCard">
+                        <p>${post.acf.Dato}</p>
                         <h2>${post.title.rendered}</h2>
                         <p class="infoText">${post.content.rendered}</p>
                      </div>`
