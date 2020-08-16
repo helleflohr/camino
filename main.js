@@ -80,6 +80,7 @@ window.appendMerchendiceTopText = () => merchendicePage.appendMerchendiceTopText
 window.appendInfo = () => infoPage.appendInfo();
 window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
 window.burgerMenu = () => scrollService.burgerMenu();
+window.closeBurger = () => scrollService.closeBurger();
 
 
 // ---------------  Maja ---------------
