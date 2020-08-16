@@ -111,12 +111,12 @@ strong {
 }
 
 /* ---------- Scrollbar styling ---------- */
-::-webkit-scrollbar {
+#frontpagesection p ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
 }
 
-::-webkit-scrollbar-thumb {
+#frontpagesection p ::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, .5);
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
@@ -533,7 +533,8 @@ h2 {
 
 #merchendice, #info, #about{
   height: 92%;
-  overflow: scroll;
+  overflow: auto;
+  /* overflow: visible; */
 }
 
 #merchendice,
@@ -1527,6 +1528,12 @@ form button {
 
 @media only screen and (min-width: 1025px) {
 
+  #merchendice, #info, #about{
+    height: 92%;
+    /* overflow: auto; */
+    overflow: visible;
+  }
+
   /* ---------- Navbar ---------- */
 
   #allBurgerMenu {
@@ -1711,7 +1718,9 @@ form button {
   #content {
     width: 90vw;
     height: calc(var(--vh, 1vh) * 100);
-    overflow: visible;
+    /* overflow: visible; */
+    overflow-y:auto;
+    overflow-x: hidden;
   }
 
   #frontpageSection {
