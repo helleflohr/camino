@@ -131,7 +131,7 @@ aside {
 
 #content {
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 90);
+  height: calc(var(--vh, 1vh) * 87.5);
   overflow: visible;
   background-color: var(--camino-blue);
 }
@@ -318,6 +318,7 @@ hr {
   padding: 12px;
   font-size: 16px;
   border: none;
+  height: 20%;
 }
 
 #burgerdropdown {
@@ -356,6 +357,7 @@ hr {
 
 #allBurgerMenu {
   position: relative;
+  height: 8%;
 }
 
 
@@ -371,26 +373,30 @@ hr {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
+  align-content: center;
+  /* position: relative; */
 }
 
 #frontpageTextDiv {
-  justify-content: start;
+  /* justify-content: start; */
   width: 90%;
+  height: auto;
   margin: 0 auto;
   text-align: center;
 }
 
 #frontpageLogoDiv {
   width: 70%;
-  margin-left: 15%;
-  margin-top: 4%;
+  margin: 0 auto;
+  /* margin-left: 15%;
+  margin-top: 4%; */
 }
 
 #frontpageLogo {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
+  max-width: 100%;
+  /* max-height: 100%; */
+  /* display: block; */
+  /* margin: 0 auto; */
 }
 
 #frontpageImage h1 {
@@ -403,15 +409,20 @@ hr {
 }
 
 .socialMedia {
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: 1%;
-  padding: 1em;
+  padding: 1em; */
+  width: 10%;
+  /* height: 90%; */
+  align-self: flex-end;
+ 
 
 }
 
 .socialMedia img {
   width: 2em;
   height: 2em;
+  align-self: flex-end;
 }
 
 #lag {
@@ -589,7 +600,7 @@ h2 {
 
 .maparea {
   position: relative;
-  height: 100%;
+  height: 92%;
   overflow-x: hidden;
   width: 87%;
 }
@@ -1627,29 +1638,34 @@ form button {
 
   #frontpageLogoDiv {
      width: auto;
-     height: 80%;
-    /*margin-left: 5%;
-    margin-top: 8%; */
-    position: absolute;
-    left: 5%;
+     width: 30%;
+     margin: auto 0;
+    margin-left: 5%;
+    /* margin-top: 8%; */
+    /* position: absolute; */
+    /* left: 5%;
     top: 0;
     margin: 0;
-    transform: translate(0, 20%);
+    transform: translate(0, 20%); */
   }
 
   #frontpageLogo {
-    width: 90%;
+    /* width: 90%; */
+    height: 100%;
+    width: auto;
+  
   }
 
   #frontpageTextDiv {
-    width: 60%;
-    position: absolute;
+    width: 50%;
+    /* position: absolute; */
     /* margin: 18% 0 0 2.5%; */
-    left: 35%;
+    /* left: 35%;
     top: 0;
     margin: 0;
-    transform: translate(0, 130%);
-    /* text-align: left; */
+    transform: translate(0, 130%); */
+    text-align: left;
+    align-self: center;
   }
 
   #frontpageImage h1 {
@@ -1691,8 +1707,8 @@ form button {
     height: 50%;
     overflow-y: auto;
     /* margin-top: 9%; */
-    height: 16%;
-    margin-top: 9%;
+    /* height: 16%; */
+    /* margin-top: 9%; */
   }
 
   /* #frontpageSection img {

@@ -81,7 +81,7 @@ class SpaService {
     navbar.style.display = 'block';
     content.style.width = '100vw';
     maparea.style.display = 'block';
-    
+
 
 
     // let maparea = document.querySelector('.maparea');
