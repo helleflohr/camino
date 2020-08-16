@@ -1912,7 +1912,11 @@ form button {
 
   /* Genereltsiden */
 
-  .card,
+  .card {
+    margin: 0% 0% 0 2%;
+
+  }
+
   .infoCard {
     margin: 2% 0% 0 2%;
 
