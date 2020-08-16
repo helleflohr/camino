@@ -25,7 +25,7 @@ export default class MerchendicePage {
 
         document.querySelector("#merchendiceDiv").innerHTML += `
                         <div class="card">
-                        <img src="${post.acf.image}">
+                        ${post.acf.image}
                         <h2>${post.title.rendered}</h2>
                         <h3 class="price">${post.acf.price} kr.</h3>
                         <p class="merchendiceText">${post.content.rendered}</p>
@@ -52,10 +52,5 @@ export default class MerchendicePage {
     };
 
   }
-  as
-
-
-
-
 
 }
