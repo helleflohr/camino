@@ -515,6 +515,11 @@ h2 {
 
 /* ---------- merchendice og info page styling ---------- */
 
+#merchendice, #info, #about{
+  height: 92%;
+  overflow: scroll;
+}
+
 #merchendice,
 #merchendiceText,
 #info {
@@ -526,6 +531,8 @@ h2 {
 #infoDiv {
   display: flex;
   flex-wrap: wrap;
+  max-height: 100%;
+  
 }
 
 /* #infoDiv {
@@ -542,7 +549,7 @@ h2 {
   background-color: var(--text-color-light);
   width: 90%;
   max-width: 300px;
-  margin: 2em auto;
+  margin: 1em auto;
   text-align: center;
   font-family: arial;
   padding: 1em;
