@@ -496,7 +496,7 @@ h2 {
 #generelt img {
   display: block;
   margin: 1em auto;
-  max-width: 550px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -578,7 +578,7 @@ h2 {
 
 /* ---------- map ---------- */
 #mapid {
-  height: 100%;
+  height: 87.5%;
   width: 100%;
   position: absolute;
   z-index: 0;
@@ -1200,7 +1200,7 @@ form button {
 }
 
 .leaflet-popup-content {
-  width: auto !important;
+  width: 200px !important;
 }
 
 /* ------- Cluster ------*/
@@ -1540,6 +1540,7 @@ form button {
 
 
   #mapid {
+    height: 100%;
     width: 90vw;
     overflow: hidden;
   }
