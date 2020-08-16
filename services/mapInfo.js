@@ -54,7 +54,7 @@ class MapInfoService {
                 iconUrl: 'images/ikoner-map/Vandposter.svg'
             }),
             Udsigtspunkter = new iconClass({
-                iconUrl: 'images/ikoner-map/Udkigspunkter.svg'
+                iconUrl: 'images/ikoner-map/Udsigtspunkter.svg'
             }),
             Telt = new iconClass({
                 iconUrl: 'images/ikoner-map/Telt.svg'
