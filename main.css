@@ -534,6 +534,7 @@ h2 {
   font-family: arial;
   padding: 1em;
   border: 7px solid var(--camino-green);
+  border-radius: 25px;
 }
 
 .price {
