@@ -66,8 +66,8 @@
       </div>
     </nav>
   </aside>
-  <section id="content">
 
+  <section id="content">
     <!--Burgermenu-->
     <div id="allBurgerMenu">
       <div id="burgerdropdown">
@@ -78,10 +78,11 @@
         </div>
         <div id="burgercontent">
           <ul>
-            <li><a class="liAbout" href="#about" onclick="appendWpPosts()">Om CFH</a></li>
-            <li><a class="liMerch" href="#merchendice" onclick="appendMerchendice()">Merchendice</a></li>
-            <li><a class="liInfo" href="#info" onclick="appendInfo()">Info</a></li>
-            <li><a class="liHome" href="#home">Hjem</a></li>
+            <li><a class="liAbout menuLink" href="#about" onclick="appendWpPosts(), closeBurger()">Om CFH</a></li>
+            <li><a class="liMerch menuLink" href="#merchendice"
+                onclick="appendMerchendice(),closeBurger()">Merchendice</a></li>
+            <li><a class="liInfo menuLink" href="#info" onclick="appendInfo(),closeBurger()">Info</a></li>
+            <li><a class="liHome menuLink" href="#home" onclick="closeBurger()">Hjem</a></li>
           </ul>
         </div>
       </div>

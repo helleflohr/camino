@@ -80,6 +80,8 @@ class SpaService {
     tabbar.style.display = 'block';
     navbar.style.display = 'block';
     content.style.width = '100vw';
+    maparea.style.display = 'block';
+    
 
 
     // let maparea = document.querySelector('.maparea');
@@ -99,6 +101,7 @@ class SpaService {
       // maparea.style.display = 'none'; // remove content
       aside.style.display = 'none'; // remove aside
       tabbar.style.display = 'none'; // remove aside
+      maparea.style.display = 'none';
 
       this.showPage(page);
       loaderService.show(false) // turn off the loader
@@ -140,14 +143,14 @@ class SpaService {
         }
 
       } else if (page === 'home') {
-
         aside.style.display = 'none'; // remove aside
+        maparea.style.display = 'none';
 
 
 
       } else if (page === 'mapid') {
         navbar.style.display = 'none';
-        content.style.width = '90vw';
+        content.style.width = '100vw';
         if (this.visitedPages[0] !== page) { // if map wasn´t the first page
           map._onResize(); // run the map
         }
