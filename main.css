@@ -1530,7 +1530,9 @@ form button {
 
 @media only screen and (min-width: 1025px) {
 
-  #merchendice, #info, #about{
+  #merchendice,
+  #info,
+  #about {
     height: 92%;
     /* overflow: auto; */
     overflow: visible;
@@ -1721,7 +1723,7 @@ form button {
     width: 90vw;
     height: calc(var(--vh, 1vh) * 100);
     /* overflow: visible; */
-    overflow-y:auto;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
@@ -1873,6 +1875,12 @@ form button {
 
   .postForm input:focus {
     outline: 0;
+  }
+
+  .small {
+    padding: 1em 0 0 0;
+    font-size: .8em;
+    color: var(--text-color-dark);
   }
 
 

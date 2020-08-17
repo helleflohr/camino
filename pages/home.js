@@ -187,7 +187,9 @@ export default class HomePage {
         <div class="div-image-preview">
         <img src="" class="image-preview imagePreview">
       </div>
-        <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag</p>
+        <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag*</p>
+
+        <p class="small">*Når du trykker "Opret opslag" accepterer du samtidig at dit navn, samt det indhold du har indført, kan blive vist på vores hjemmeside.</p>
       </form>
       </div>
           </section>`
