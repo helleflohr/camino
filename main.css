@@ -946,6 +946,7 @@ aside h3 {
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
   z-index: 1000;
+  color: var(--text-color-dark)
 }
 
 /* Modal Content/Box */
@@ -961,6 +962,7 @@ aside h3 {
   border-radius: 25px;
   overflow-y: scroll;
   overflow-x: visible;
+  color: var(--text-color-dark);
 }
 
 .postForm {
@@ -1034,6 +1036,12 @@ aside h3 {
 
 .postForm input:focus {
   outline: 0;
+}
+
+.small {
+  padding: 1em 0 0 0;
+  font-size: .8em;
+  color: var(--text-color-dark);
 }
 
 /* The Close Button */
