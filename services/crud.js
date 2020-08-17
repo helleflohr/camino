@@ -208,7 +208,7 @@ class CrudService {
       alert("Beskrivelse skal udfyldes");
       return false;
     } else if (checkBox.checked == false) {
-      alert('Sæt et flueben i checkboksen og dermed accepter betingelserne for oprettelse.');
+      alert('Scroll ned og sæt et flueben i checkboksen. Dermed accepter betingelserne for oprettelse.');
       return false;
     }
   }
