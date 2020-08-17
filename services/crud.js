@@ -120,6 +120,8 @@ class CrudService {
   //Johanne
   // add a new post to firestore (database)
   createPost(number) {
+
+
     if (this.validateForm(number) !== false) {
       // references to the input fields in the modal with the correct stagenumber
       let stageInput = document.querySelector(`#commentsModal${number}`)
@@ -145,7 +147,7 @@ class CrudService {
         scrollService.tabs('comments', number);
         stageInput.style.display = "none" //when created display none on modal / close modale existing group of collection post from firebase 
       });
-      alert("Du har nu oprettet et opslag som afventer godkendelse hos administrator");
+      alert("Du har nu oprettet et opslag som afventer godkendelse hos administrator. Tak for dit bidrag!");
       nameInput.value = "";
       textInput.value = "";
       imageInput.src = "";
@@ -154,6 +156,7 @@ class CrudService {
 
       this.modalClose(close)
     }
+    console.log('checked')
 
 
 
@@ -190,6 +193,7 @@ class CrudService {
     //variables of the value of name or textarea input in the form with the correct stagenumber
     let name = document.querySelector(`form.stage-${number} .formName`).value;
     let text = document.querySelector(`form.stage-${number} .formText`).value;
+    let checkBox = document.querySelector(`#agrement${number}`);
     //form fields name and text
     if (name == "" && text == "") {
       alert("Navn og beskrivelse skal udfyldes");
@@ -202,6 +206,9 @@ class CrudService {
     //form field text
     else if (text == "") {
       alert("Beskrivelse skal udfyldes");
+      return false;
+    } else if (checkBox.checked == false) {
+      alert('Sæt et flueben i checkboksen og dermed accepter betingelserne for oprettelse.');
       return false;
     }
   }

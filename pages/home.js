@@ -188,8 +188,9 @@ export default class HomePage {
         <img src="" class="image-preview imagePreview">
       </div>
         <p class="btnCreate" onclick="createPost(${post.acf.stageNumber})">Opret opslag*</p>
-
-        <p class="small">*Når du trykker "Opret opslag" accepterer du samtidig at dit navn, samt det indhold du har indført, kan blive vist på vores hjemmeside.</p>
+        <input type="checkbox" id="agrement${post.acf.stageNumber}" name="agrement${post.acf.stageNumber}" value="agreed">
+        <label class="small" for="agrement${post.acf.stageNumber}">*Ved oprettelse af opslag accepterer du samtidig at dit navn, samt det indhold du har indført, kan blive vist på vores hjemmeside.</label><br>
+       
       </form>
       </div>
           </section>`
