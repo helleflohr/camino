@@ -554,12 +554,10 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   max-height: 100%;
+  justify-content: center;
 
 }
 
-/* #infoDiv {
-  margin: 2em auto;
-} */
 
 #merchendiceText {
   padding: 5em 1em 1em 1em;
@@ -577,6 +575,10 @@ h2 {
   padding: 1em;
   border: 7px solid var(--camino-green);
   border-radius: 25px;
+}
+
+.infoCard {
+  height: 100%;
 }
 
 .price {
@@ -1313,7 +1315,7 @@ form button {
 #navbar li a {
   background-color: var(--camino-green);
   padding: .2em .7em;
-  border-radius: 25px;
+  border-radius: 5px;
   color: var(--text-color-light);
 }
 
@@ -1923,7 +1925,7 @@ form button {
 
   .infoCard {
     margin: 12% 0% 0 2%;
-    height: 100%;
+
 
   }
 
