@@ -10,7 +10,7 @@ import {
 } from "./../main.js";
 class SpaService {
   constructor() {
-    this.defaultPage = "home";
+    /*this.defaultPage = "home";*/
     this.counter = 0;
     this.navCounter = 0;
     this.visitedPages = [];

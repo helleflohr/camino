@@ -26,7 +26,7 @@ export default class HomePage {
   <div  class="socialMedia">
     <a target="_blank" href="https://www.instagram.com/caminofroesherred/?hl=da"><img src="images/ikoner/instagram.svg"></a>
     <a target="_blank" href="https://www.facebook.com/groups/204253190209604/"><img src="images/ikoner/facebook.svg"></a>
-    <a target="_blank" href="https://www.livogland.dk/lokale-aktionsgrupper"><img id="lag" src="images/LAG_logo_2.png"></a>
+    <a target="_blank" href="https://ec.europa.eu/info/food-farming-fisheries/key-policies/common-agricultural-policy/rural-development#ruraldevelopmentfundsandprogrammes"><img id="lag" src="images/LAG_logo_2.png"></a>
   </div>
   
   </section>
