@@ -104,3 +104,17 @@ export let map = new L.Map("mapid", {
     center: new L.LatLng(latitude, longitude),
     zoom: zoom
 });
+
+//---------------  Helle ---------------
+function loadContent(){
+    let contentDiv = document.getElementById("app");
+    contentDiv.innerHTML = location.hash;
+  }
+  
+  if(!location.hash) {
+    location.hash = "#home";
+  }
+  
+  loadContent();
+  
+  window.addEventListener("hashchange", loadContent)
