@@ -32,6 +32,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* ---------- font styling ---------- */
@@ -432,6 +433,7 @@ hr {
   /* height: 90%; */
   align-self: flex-end;
   text-align: left;
+  padding: 4px;
 
 
 }
@@ -451,7 +453,8 @@ hr {
 #frontpageSection {
   text-align: left;
   background-color: var(--camino-blue);
-  margin-bottom: calc(var(--vh, 1vh) * 15);
+  padding-bottom: calc(var(--vh, 1vh) * 15);
+
 }
 
 #frontpageSection div {
@@ -1332,7 +1335,6 @@ form button {
   background-color: var(--camino-green);
   width: 100vw;
   position: fixed;
-  height: calc(var(--vh, 1vh) * 12.5);
   bottom: 0;
   left: 0;
   /* right: 0; */
@@ -1944,6 +1946,7 @@ form button {
 
   .infoCard {
     margin: 12% 0% 0 2%;
+    height: 100%;
 
   }
 
