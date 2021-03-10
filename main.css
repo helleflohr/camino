@@ -897,7 +897,6 @@ aside h3 {
 }
 
 .gpx:hover {
-  /* color: var(--camino-yellow); */
   background-color: var(--camino-green);
 }
 
@@ -913,7 +912,6 @@ aside h3 {
 }
 
 .zoom:hover {
-  /* color: var(--camino-yellow); */
   background-color: var(--camino-green);
 }
 
@@ -1311,8 +1309,8 @@ form button {
 
 #navbar li a {
   background-color: var(--camino-green);
-  padding: .2em;
-
+  padding: .2em .7em;
+  border-radius: 25px;
   color: var(--text-color-light);
 }
 
@@ -1542,7 +1540,6 @@ form button {
   #info,
   #about {
     height: 92%;
-    /* overflow: auto; */
     overflow: visible;
   }
 
@@ -1570,7 +1567,7 @@ form button {
   }
 
   #navbar li a {
-    padding: .5em;
+    padding: .5em .7em;
     color: var(--text-color-light);
   }
 
@@ -1686,16 +1683,9 @@ form button {
     max-height: 100%;
     margin: auto 0;
     margin-left: 5%;
-    /* margin-top: 8%; */
-    /* position: absolute; */
-    /* left: 5%;
-    top: 0;
-    margin: 0;
-    transform: translate(0, 20%); */
   }
 
   #frontpageLogo {
-    /* width: 90%; */
     max-height: 100%;
     width: auto;
 
@@ -1703,12 +1693,6 @@ form button {
 
   #frontpageTextDiv {
     width: 50%;
-    /* position: absolute; */
-    /* margin: 18% 0 0 2.5%; */
-    /* left: 35%;
-    top: 0;
-    margin: 0;
-    transform: translate(0, 130%); */
     text-align: left;
     align-self: center;
   }
@@ -1730,7 +1714,6 @@ form button {
   #content {
     width: 90vw;
     height: calc(var(--vh, 1vh) * 100);
-    /* overflow: visible; */
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -1759,14 +1742,8 @@ form button {
   #frontpageSection p {
     height: 50%;
     overflow-y: auto;
-    /* margin-top: 9%; */
-    /* height: 16%; */
-    /* margin-top: 9%; */
   }
 
-  /* #frontpageSection img {
-    width: 7%;
-  } */
 
   /* --------------------- Leaflet (map controls) -------------------*/
   .leaflet-control-layers-toggle {
@@ -1938,7 +1915,7 @@ form button {
   /* Genereltsiden */
 
   .card {
-    margin: 0% 0% 0 2%;
+    margin: 0 auto;
 
   }
 
