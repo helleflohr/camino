@@ -8,9 +8,11 @@ import authService from "./authService.js"
 import {
   map
 } from "./../main.js";
+import addSubpages from "./addSubpages.js";
+
 class SpaService {
   constructor() {
-    /*this.defaultPage = "home";*/
+    this.defaultPage = "home";
     this.counter = 0;
     this.navCounter = 0;
     this.visitedPages = [];
@@ -86,9 +88,11 @@ class SpaService {
 
     // let maparea = document.querySelector('.maparea');
 
-    let page = this.defaultPage;
+    let page = this.defaultPage // = 
+    console.log("pppppaage", page);
     if (window.location.hash) {
       page = window.location.hash.slice(1);
+      console.log("PAGE!!!", page);
     }
     loaderService.show(true) // turn off the loader
     this.hideAllPages();
@@ -124,6 +128,14 @@ class SpaService {
       aside.style.display = "none"
       maparea.style.display = "none"
 
+      if(page == 'info'){
+      addSubpages.appendInfo();
+      } else if(page == 'merchendice'){
+        addSubpages.appendMerchendice();
+        addSubpages.appendMerchendiceTopText();
+      }else if(page = 'about'){
+        addSubpages.appendWpPosts();
+      }
     }
 
 

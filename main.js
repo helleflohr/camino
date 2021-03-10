@@ -22,6 +22,8 @@ import crudService from "./services/crud.js";
 import loaderService from "./services/loader.js";
 import stageCircles from "./components/stageCircles.js";
 
+import addSubpages from "./services/addSubpages.js";
+
 
 
 
@@ -47,7 +49,7 @@ if (window.innerWidth > 1024) {
 }
 
 
-window.pageChange = () => spaService.pageChange();
+
 window.dropdownDescription = () => homePage.dropdownDescription();
 window.goTo = (number) => scrollService.goTo(number);
 window.goFrom = (number) => scrollService.goFrom(number);
@@ -74,13 +76,15 @@ window.reloadPage = () => spaService.reloadPage();
 window.deletePost = (postId) => adminService.deletePost(postId);
 window.approvePost = (postId) => adminService.approvePost(postId);
 window.logout = () => authService.logout();
-window.appendWpPosts = () => aboutPage.appendWpPosts();
-window.appendMerchendice = () => merchendicePage.appendMerchendice();
-window.appendMerchendiceTopText = () => merchendicePage.appendMerchendiceTopText();
-window.appendInfo = () => infoPage.appendInfo();
+window.appendWpPosts = () => addSubpages.appendWpPosts();
+window.appendMerchendice = () => addSubpages.appendMerchendice();
+window.appendMerchendiceTopText = () => addSubpages.appendMerchendiceTopText();
+window.appendInfo = () => addSubpages.appendInfo();
 window.appendFrontpageInfo = () => fetchService.appendFrontpageInfo();
 window.burgerMenu = () => scrollService.burgerMenu();
 window.closeBurger = () => scrollService.closeBurger();
+
+window.pageChange = () => spaService.pageChange();
 
 
 // ---------------  Maja ---------------
@@ -106,15 +110,15 @@ export let map = new L.Map("mapid", {
 });
 
 //---------------  Helle ---------------
-function loadContent(){
-    let contentDiv = document.getElementById("app");
-    contentDiv.innerHTML = location.hash;
-  }
+// function loadContent(){
+//     let contentDiv = document.getElementById("app");
+//     contentDiv.innerHTML = location.hash;
+//   }
   
-  if(!location.hash) {
-    location.hash = "#home";
-  }
+//   if(!location.hash) {
+//     location.hash = "#home";
+//   }
   
-  loadContent();
+//   loadContent();
   
-  window.addEventListener("hashchange", loadContent)
+//   window.addEventListener("hashchange", loadContent)

@@ -14,15 +14,5 @@ export default class AboutPage {
       `;
   }
 
-  async appendWpPosts() {
 
-    await fetchService.getAboutPost();
-    let wpPost = fetchService.aboutPost[0];
-
-
-    console.log("Generel side funktion")
-    document.querySelector("#generelt").innerHTML = `
-                    <h2>${wpPost.title.rendered}</h2>
-                    <p>${wpPost.content.rendered}</p>`
-  }
 }

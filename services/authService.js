@@ -35,7 +35,7 @@ class AuthService {
 
     userNotAuthenticated() {
         // spaService.hideTabbar(true);
-        spaService.navigateTo("home");
+        // spaService.navigateTo("info");
 
         // Firebase UI configuration
         const uiConfig = {
